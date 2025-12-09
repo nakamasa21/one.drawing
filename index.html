@@ -8,19 +8,38 @@
       font-family: sans-serif;
       margin: 20px;
     }
-    #topic {
-      font-size: 1.4rem;
-      font-weight: bold;
+
+    /* テキストエリア + ボタン横並び */
+    .topic-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
       margin: 20px 0;
+    }
+
+    textarea#topicArea {
+      width: 100%;
+      min-height: 120px;
+      font-size: 1.2rem;
       padding: 10px;
+      resize: vertical;
       background: #f0f0f0;
       border-radius: 6px;
     }
+
     button {
       padding: 10px 15px;
       font-size: 1rem;
-      margin-right: 10px;
+      margin-top: 5px;
+      cursor: pointer;
     }
+
+    /* コピー成功の視覚効果 */
+    #copyBtn.copied {
+      background: #4caf50;
+      color: white;
+    }
+
     ul {
       margin-top: 20px;
       padding-left: 20px;
@@ -31,7 +50,11 @@
 
   <h1>お題ガチャ</h1>
 
-  <div id="topic">ここにお題が表示されます</div>
+  <!-- ▼ お題表示部分（textarea + コピー） -->
+  <div class="topic-row">
+    <textarea id="topicArea" readonly>ここにお題が表示されます</textarea>
+    <button id="copyBtn">コピー</button>
+  </div>
 
   <button id="drawBtn">お題を引く</button>
   <button id="resetBtn">履歴リセット</button>
