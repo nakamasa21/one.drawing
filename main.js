@@ -18,7 +18,6 @@ window.addEventListener("DOMContentLoaded", () => {
 // JSON 読み込み
 // -----------------------------------------------------
 async function loadJSON() {
-  alert("挙動確認");
 
   const res = await fetch("topics.json");
   const data = await res.json();
@@ -34,7 +33,6 @@ async function loadJSON() {
 // お題を引く
 // -----------------------------------------------------
 function drawTopic() {
-  alert("挙動確認");
 
   if (topics.length === 0) {
     alert("もうお題がありません！");
