@@ -15,7 +15,11 @@
 <h1>お題ガチャ</h1>
 <div id="topic">ボタンを押してお題を引く！</div>
 <button onclick="drawTopic()">ガチャを回す</button>
-
+<div style="margin-top:20px;">
+    <label>抽出上限回数：</label>
+    <input id="maxCountInput" type="number" value="3" min="1" style="width:60px;">
+    <button id="saveMaxCount">設定</button>
+</div>
 <h2>履歴</h2>
 <ul id="history"></ul>
 
