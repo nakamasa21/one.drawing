@@ -1,50 +1,107 @@
+// =======================================
+// 抽出上限回数（画面から設定可能）
+// =======================================
+
+// localStorage から上限回数を読み込む（無ければ3）
+let MAX_COUNT = parseInt(localStorage.getItem("maxCount")) || 3;
+
+// HTML の入力欄に反映
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("maxCountInput").value = MAX_COUNT;
+});
+
+document.getElementById("saveMaxCount").addEventListener("click", () => {
+  const val = parseInt(document.getElementById("maxCountInput").value);
+
+  if (val >= 1) {
+    MAX_COUNT = val;
+    localStorage.setItem("maxCount", MAX_COUNT);
+    alert(`抽出上限を ${MAX_COUNT} 回に設定しました。`);
+  } else {
+    alert("1 以上の数字を入力してください。");
+  }
+});
+
+
+// =======================================
+// ここから元の機能
+// =======================================
+
 let topics = [];
-let usedTopics = JSON.parse(localStorage.getItem("usedTopics") || "[]");
+let history = JSON.parse(localStorage.getItem("topicHistory") || "[]");
 
-async function loadJSON() {
+// ページ読み込み時に JSON を読み込む
+fetch("topics.json")
+  .then(res => res.json())
+  .then(data => {
+    topics = data.topics;
+    updateHistoryUI();
+  });
 
-  const res = await fetch("topics.json");
-  const data = await res.json();
-  topics = data.topics;
-alert(topics.length);
-  // 使用済みを除外
-  topics = topics.filter(t => !usedTopics.some(u => u.title === t.title));
+document.getElementById("drawBtn").addEventListener("click", drawTopic);
+document.getElementById("resetBtn").addEventListener("click", resetHistory);
 
-  updateHistory();
-}
-
+// ---------------------------------------
+// お題を引く
+// ---------------------------------------
 function drawTopic() {
-  if (topics.length === 0) {
-    alert("もうお題がありません！");
+
+  // お題ごとの抽出回数を算出
+  const countMap = {};
+  history.forEach(entry => {
+    countMap[entry.topic] = (countMap[entry.topic] || 0) + 1;
+  });
+
+  // 上限回数未満のお題だけ抽出対象にする
+  const remaining = topics.filter(t => {
+    return (countMap[t] || 0) < MAX_COUNT;
+  });
+
+  if (remaining.length === 0) {
+    document.getElementById("result").textContent =
+      "抽出上限に達しているため、利用可能なお題がありません。";
     return;
   }
 
-  const index = Math.floor(Math.random() * topics.length);
-  const topic = topics[index];
+  // ランダム抽出
+  const random = remaining[Math.floor(Math.random() * remaining.length)];
 
-  // 表示
-  document.getElementById("topic").textContent =
-    `${topic.title}（${topic.category}）`;
+  // 日付
+  const timestamp = new Date().toLocaleString("ja-JP");
 
-  // 使用済みに追加
-  usedTopics.push(topic);
-  localStorage.setItem("usedTopics", JSON.stringify(usedTopics));
+  // 履歴に追加
+  history.push({
+    topic: random,
+    date: timestamp
+  });
 
-  // topics から削除
-  topics.splice(index, 1);
+  localStorage.setItem("topicHistory", JSON.stringify(history));
 
-  updateHistory();
+  document.getElementById("result").textContent = `${random}（${timestamp}）`;
+
+  updateHistoryUI();
 }
 
-function updateHistory() {
+// ---------------------------------------
+// 履歴更新
+// ---------------------------------------
+function updateHistoryUI() {
   const ul = document.getElementById("history");
   ul.innerHTML = "";
 
-  usedTopics.forEach(t => {
+  history.forEach(entry => {
     const li = document.createElement("li");
-    li.textContent = `${t.title}（${t.category}）`;
+    li.textContent = `${entry.topic}（${entry.date}）`;
     ul.appendChild(li);
   });
 }
 
-loadJSON();
+// ---------------------------------------
+// 履歴リセット
+// ---------------------------------------
+function resetHistory() {
+  history = [];
+  localStorage.removeItem("topicHistory");
+  updateHistoryUI();
+  document.getElementById("result").textContent = "ここにお題が表示されます";
+}
