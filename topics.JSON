@@ -1,9 +1,0 @@
-{
-  "topics": [
-    { "title": "りんご", "category": "食べ物" },
-    { "title": "サッカー", "category": "スポーツ" },
-    { "title": "犬", "category": "動物" },
-    { "title": "ピアノ", "category": "音楽" },
-    { "title": "海", "category": "自然" }
-  ]
-}
