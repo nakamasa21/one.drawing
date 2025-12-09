@@ -6,7 +6,7 @@ async function loadJSON() {
   const res = await fetch("topics.json");
   const data = await res.json();
   topics = data.topics;
-
+alert(topics.length);
   // 使用済みを除外
   topics = topics.filter(t => !usedTopics.some(u => u.title === t.title));
 
@@ -14,7 +14,6 @@ async function loadJSON() {
 }
 
 function drawTopic() {
-alert("挙動確認");
   if (topics.length === 0) {
     alert("もうお題がありません！");
     return;
