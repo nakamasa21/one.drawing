@@ -10,6 +10,9 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("drawBtn").addEventListener("click", drawTopic);
   document.getElementById("resetBtn").addEventListener("click", resetHistory);
 
+  // ★ コピー機能
+  document.getElementById("copyBtn").addEventListener("click", copyTopic);
+
   // JSON 読み込み
   loadJSON();
 });
@@ -42,8 +45,8 @@ function drawTopic() {
   const index = Math.floor(Math.random() * topics.length);
   const topic = topics[index];
 
-  // 表示
-  document.getElementById("topic").textContent =
+  // ▼ 変更：テキストエリアに表示
+  document.getElementById("topicArea").value =
     `${topic.title}（${topic.category}）`;
 
   // 使用済みに追加
@@ -80,5 +83,37 @@ function resetHistory() {
   // topics.json から再読み込み
   loadJSON();
 
-  document.getElementById("topic").textContent = "ここにお題が表示されます";
+  // ▼ テキストエリアを初期化
+  document.getElementById("topicArea").value = "ここにお題が表示されます";
+}
+
+// -----------------------------------------------------
+// ★ コピー処理
+// -----------------------------------------------------
+async function copyTopic() {
+
+  const text = document.getElementById("topicArea").value;
+  const btn = document.getElementById("copyBtn");
+
+  if (!text || text === "ここにお題が表示されます") {
+    alert("コピーするお題がありません！");
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(text);
+
+    const before = btn.textContent;
+    btn.classList.add("copied");
+    btn.textContent = "コピーしました ✓";
+
+    // 1.5秒後に元に戻す
+    setTimeout(() => {
+      btn.textContent = before;
+      btn.classList.remove("copied");
+    }, 1500);
+
+  } catch (e) {
+    alert("コピーできませんでした");
+  }
 }
