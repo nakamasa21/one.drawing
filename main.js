@@ -47,7 +47,13 @@ function drawTopic() {
 
   // ▼ 変更：テキストエリアに表示
   document.getElementById("topicArea").value =
-    `${topic.title}（${topic.category}）`;
+    `本日のお題は<br>
+    ・<span class="topic-bold">${topic.title} （${topic.category}） </span><br>
+    です。<br><br>
+    制限時間は60分（最大120分）、21時より開始いたします。<br>
+    ルールをご確認の上ご参加ください。<br>
+    <span class="hashtag">#イナイレ版ワンドロ勝負</span>
+  `;
 
   // 使用済みに追加
   usedTopics.push(topic);
