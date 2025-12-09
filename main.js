@@ -3,8 +3,6 @@ let usedTopics = JSON.parse(localStorage.getItem("usedTopics") || "[]");
 
 async function loadJSON() {
 
-alert("挙動確認");
-
   const res = await fetch("topics.json");
   const data = await res.json();
   topics = data.topics;
