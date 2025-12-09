@@ -4,26 +4,43 @@
   <meta charset="UTF-8">
   <title>お題ガチャ</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; }
-    #topic { font-size: 28px; margin: 20px 0; }
-    #history { margin-top: 20px; }
-    button { padding: 10px 20px; font-size: 18px; }
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    #topic {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 20px 0;
+      padding: 10px;
+      background: #f0f0f0;
+      border-radius: 6px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 1rem;
+      margin-right: 10px;
+    }
+    ul {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
 
-<h1>お題ガチャ</h1>
-<div id="topic">ボタンを押してお題を引く！</div>
-<button onclick="drawTopic()">ガチャを回す</button>
-<div style="margin-top:20px;">
-    <label>抽出上限回数：</label>
-    <input id="maxCountInput" type="number" value="3" min="1" style="width:60px;">
-    <button id="saveMaxCount">設定</button>
-</div>
-<h2>履歴</h2>
-<ul id="history"></ul>
+  <h1>お題ガチャ</h1>
 
-<script src="main.js"></script>
+  <div id="topic">ここにお題が表示されます</div>
+
+  <button id="drawBtn">お題を引く</button>
+  <button id="resetBtn">履歴リセット</button>
+
+  <h2>履歴</h2>
+  <ul id="history"></ul>
+
+  <!-- JS 読み込み -->
+  <script src="main.js"></script>
 
 </body>
 </html>
