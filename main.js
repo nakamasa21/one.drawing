@@ -21,12 +21,11 @@ window.addEventListener("DOMContentLoaded", () => {
 // JSON 読み込み
 // -----------------------------------------------------
 async function loadJSON() {
-
   const res = await fetch("topics.json");
   const data = await res.json();
   topics = data.topics;
 
-  // 使用済みを除外
+  // 使用済みお題を除外
   topics = topics.filter(t => !usedTopics.some(u => u.title === t.title));
 
   updateHistory();
@@ -45,10 +44,10 @@ function drawTopic() {
   const index = Math.floor(Math.random() * topics.length);
   const topic = topics[index];
 
-  // ▼ 変更：テキストエリアに表示
+  // ▼ HTMLテキストエリア要素なら innerHTML を使う
   document.getElementById("topicArea").innerHTML =
     `本日のお題は<br>
-    ・<span class="topic-bold">${topic.title} （${topic.category}） </span><br>
+    ・<span class="topic-bold">${topic.title}（${topic.category}）</span><br>
     です。<br><br>
     制限時間は60分（最大120分）、21時より開始いたします。<br>
     ルールをご確認の上ご参加ください。<br>
@@ -89,8 +88,9 @@ function resetHistory() {
   // topics.json から再読み込み
   loadJSON();
 
-  // ▼ テキストエリアを初期化
-  document.getElementById("topicArea").value = "ここにお題が表示されます";
+  // ▼ テキストエリア初期化
+  // innerHTML を使っていたので統一
+  document.getElementById("topicArea").innerHTML = "ここにお題が表示されます";
 }
 
 // -----------------------------------------------------
@@ -98,7 +98,10 @@ function resetHistory() {
 // -----------------------------------------------------
 async function copyTopic() {
 
-  const text = document.getElementById("topicArea").value;
+  // innerHTML の内容をコピーしたい → テキスト化してコピー
+  const html = document.getElementById("topicArea").innerHTML;
+  const text = html.replace(/<br\s*\/?>/gi, "\n").replace(/<[^>]+>/g, "");
+
   const btn = document.getElementById("copyBtn");
 
   if (!text || text === "ここにお題が表示されます") {
