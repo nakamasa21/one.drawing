@@ -9,33 +9,36 @@
       margin: 20px;
     }
 
-    /* テキストエリア + ボタン横並び */
+    /* ▼ テキストエリア + ボタン縦並びに変更 */
     .topic-row {
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
       gap: 10px;
       margin: 20px 0;
+      width: 100%;
     }
 
-    textarea#topicArea {
+    /* ▼ textarea → div に変更したため調整 */
+    #topicArea {
       width: 100%;
       min-height: 120px;
       font-size: 1.2rem;
       padding: 10px;
-      resize: vertical;
       background: #f0f0f0;
       border-radius: 6px;
+      border: 1px solid #ccc;
+      white-space: pre-wrap;
     }
 
     button {
       padding: 10px 15px;
       font-size: 1rem;
-      margin-top: 5px;
       cursor: pointer;
+      width: fit-content;
     }
 
     /* コピー成功の視覚効果 */
-    #copyBtn.copied {
+    .copied {
       background: #4caf50;
       color: white;
     }
@@ -44,22 +47,22 @@
       margin-top: 20px;
       padding-left: 20px;
     }
-    
-　  .topic-bold {
-     font-weight: bold;
-　  }
-   .hashtag {
-     color: #00aaff; /* 水色 */
-　  }
+
+    .topic-bold {
+      font-weight: bold;
+    }
+    .hashtag {
+      color: #00aaff; /* 水色 */
+    }
   </style>
 </head>
 <body>
 
   <h1>お題ガチャ</h1>
 
-  <!-- ▼ お題表示部分（textarea + コピー） -->
+  <!-- ▼ お題表示部分（div + コピー） -->
   <div class="topic-row">
-    <textarea id="topicArea" readonly>ここにお題が表示されます</textarea>
+    <div id="topicArea">ここにお題が表示されます</div>
     <button id="copyBtn">コピー</button>
   </div>
 
@@ -71,12 +74,14 @@
   <div id="birthdayArea" class="birthday-box">
     読み込み中…
   </div>
+  <button id="birthdayCopyBtn">コピー</button>
 
   <!-- 今月の誕生日 -->
   <h2>今月の誕生日</h2>
   <div id="monthBirthdayArea" class="birthday-box">
     読み込み中…
   </div>
+  <button id="monthBirthdayCopyBtn">コピー</button>
 
   <h2>履歴</h2>
   <ul id="history"></ul>
