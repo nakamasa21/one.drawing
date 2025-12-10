@@ -46,7 +46,7 @@ function drawTopic() {
   const topic = topics[index];
 
   // ▼ 変更：テキストエリアに表示
-  document.getElementById("topicArea").value =
+  document.getElementById("topicArea").innerHTML =
     `本日のお題は<br>
     ・<span class="topic-bold">${topic.title} （${topic.category}） </span><br>
     です。<br><br>
