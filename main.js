@@ -126,6 +126,7 @@ async function loadCalendar() {
 
     // ▼ 修正：calendar.json のキーは birthday
     birthdayList = data.birthday;
+    alert(birthdayList.length);
 
     return birthdayList;
 
@@ -140,11 +141,13 @@ async function loadCalendar() {
 // -----------------------------------------------------
 async function showBirthday() {
   const list = await loadCalendar();
-
+  alert(list.length);
+  
   const now = new Date();
   const mm = String(now.getMonth() + 1).padStart(2, "0");
   const dd = String(now.getDate()).padStart(2, "0");
   const today = `${mm}/${dd}`;
+  alert(today);
 
   const area = document.getElementById("birthdayArea");
 
@@ -169,6 +172,7 @@ async function showMonthBirthday() {
 
   const now = new Date();
   const mm = String(now.getMonth() + 1).padStart(2, "0");
+  alert(mm);
 
   const area = document.getElementById("monthBirthdayArea");
 
