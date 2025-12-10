@@ -215,3 +215,34 @@ async function showMonthBirthday() {
 
   area.innerHTML = output;
 }
+// ▼ お題コピー
+document.getElementById("copyBtn").addEventListener("click", () => {
+  const text = document.getElementById("topicArea").innerText;
+  navigator.clipboard.writeText(text);
+
+  const btn = document.getElementById("copyBtn");
+  btn.classList.add("copied");
+  setTimeout(() => btn.classList.remove("copied"), 800);
+});
+
+
+// ▼ 本日の誕生日コピー
+document.getElementById("birthdayCopyBtn").addEventListener("click", () => {
+  const text = document.getElementById("birthdayArea").innerText;
+  navigator.clipboard.writeText(text);
+
+  const btn = document.getElementById("birthdayCopyBtn");
+  btn.classList.add("copied");
+  setTimeout(() => btn.classList.remove("copied"), 800);
+});
+
+
+// ▼ 今月の誕生日コピー
+document.getElementById("monthBirthdayCopyBtn").addEventListener("click", () => {
+  const text = document.getElementById("monthBirthdayArea").innerText;
+  navigator.clipboard.writeText(text);
+
+  const btn = document.getElementById("monthBirthdayCopyBtn");
+  btn.classList.add("copied");
+  setTimeout(() => btn.classList.remove("copied"), 800);
+});
