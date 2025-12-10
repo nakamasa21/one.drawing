@@ -126,3 +126,92 @@ async function copyTopic() {
     alert("コピーできませんでした");
   }
 }
+
+// calendar.json キャッシュ用
+let birthdayList = [];
+
+// -----------------------------------------------------
+// calendar.json 読み込み
+// -----------------------------------------------------
+async function loadCalendar() {
+  if (birthdayList.length > 0) return birthdayList; // 2回目以降は再読込しない
+
+  try {
+    const res = await fetch("calendar.json");
+    const data = await res.json();
+    birthdayList = data.characters;
+    return birthdayList;
+  } catch (e) {
+    console.error("calendar.json 読み込みエラー：", e);
+    return [];
+  }
+}
+
+// -----------------------------------------------------
+// ★ 初期表示：本日 & 今月の誕生日を自動表示
+// -----------------------------------------------------
+window.addEventListener("DOMContentLoaded", () => {
+  showBirthday();        // 本日
+  showMonthBirthday();   // 今月
+});
+
+
+// -----------------------------------------------------
+// 本日の誕生日を表示（ボタン不要・自動）
+// -----------------------------------------------------
+async function showBirthday() {
+  const list = await loadCalendar();
+
+  // 今日（MM/DD）
+  const now = new Date();
+  const mm = String(now.getMonth() + 1).padStart(2, "0");
+  const dd = String(now.getDate()).padStart(2, "0");
+  const today = `${mm}/${dd}`;
+
+  const area = document.getElementById("birthdayArea");
+
+  // 今日の誕生日のキャラ
+  const todayBirth = list.filter(p => p.birthday === today);
+
+  if (todayBirth.length === 0) {
+    area.textContent = "本日誕生日のキャラクターはいません。";
+    return;
+  }
+
+  // 出力
+  let output = "";
+  todayBirth.forEach(p => {
+    output += `・${p.name}（${p.kana}）<br>`;
+  });
+
+  area.innerHTML = output;
+}
+
+// -----------------------------------------------------
+// 今月の誕生日を自動表示
+// -----------------------------------------------------
+async function showMonthBirthday() {
+  const list = await loadCalendar();
+
+  // 今月（MM）
+  const now = new Date();
+  const mm = String(now.getMonth() + 1).padStart(2, "0");
+
+  const area = document.getElementById("monthBirthdayArea");
+
+  // 今月一致
+  const monthBirth = list.filter(p => p.birthday.startsWith(mm));
+
+  if (monthBirth.length === 0) {
+    area.textContent = "今月誕生日のキャラクターはいません。";
+    return;
+  }
+
+  // 出力
+  let output = "";
+  monthBirth.forEach(p => {
+    output += `・${p.name}（${p.kana}） …… ${p.birthday}<br>`;
+  });
+
+  area.innerHTML = output;
+}
