@@ -2,25 +2,20 @@ let topics = [];
 let usedTopics = JSON.parse(localStorage.getItem("usedTopics") || "[]");
 
 // -----------------------------------------------------
-// 初期処理：DOM 読み込み完了後に実行
+// 初期処理
 // -----------------------------------------------------
 window.addEventListener("DOMContentLoaded", () => {
-
-  // ボタンイベント登録
   document.getElementById("drawBtn").addEventListener("click", drawTopic);
   document.getElementById("resetBtn").addEventListener("click", resetHistory);
 
-  // コピー機能
   document.getElementById("copyBtn").addEventListener("click", copyTopic);
   document.getElementById("birthdayCopyBtn").addEventListener("click", copyTodayBirthday);
   document.getElementById("monthBirthdayCopyBtn").addEventListener("click", copyMonthBirthday);
 
-  // お題 JSON 読み込み
   loadJSON();
 
-  // 誕生日表示
-  showBirthday();        // 本日
-  showMonthBirthday();   // 今月
+  showBirthday();        
+  showMonthBirthday();   
 });
 
 // -----------------------------------------------------
@@ -31,14 +26,12 @@ async function loadJSON() {
   const data = await res.json();
   topics = data.topics;
 
-  // 使用済みお題を除外
   topics = topics.filter(t => !usedTopics.some(u => u.title === t.title));
-
   updateHistory();
 }
 
 // -----------------------------------------------------
-// お題を引く
+// お題抽選
 // -----------------------------------------------------
 function drawTopic() {
 
@@ -56,8 +49,7 @@ function drawTopic() {
     です。<br><br>
     制限時間は60分（最大120分）、21時より開始いたします。<br>
     ルールをご確認の上ご参加ください。<br>
-    <span class="hashtag">#イナイレ版ワンドロ勝負</span>
-  `;
+    <span class="hashtag">#イナイレ版ワンドロ勝負</span>`;
 
   usedTopics.push(topic);
   localStorage.setItem("usedTopics", JSON.stringify(usedTopics));
@@ -89,12 +81,11 @@ function resetHistory() {
   localStorage.removeItem("usedTopics");
 
   loadJSON();
-
   document.getElementById("topicArea").innerHTML = "ここにお題が表示されます";
 }
 
 // -----------------------------------------------------
-// お題コピー
+// コピーボタン
 // -----------------------------------------------------
 async function copyTopic() {
   const html = document.getElementById("topicArea").innerHTML;
@@ -110,29 +101,28 @@ async function copyTopic() {
 }
 
 // -----------------------------------------------------
-// calendar.json キャッシュ
+// character.json キャッシュ
 // -----------------------------------------------------
-let birthdayList = [];
+let birthdayMap = {};  // ← 月ごとのオブジェクト
 
 // -----------------------------------------------------
-// calendar.json 読み込み
+// 誕生日 json 読み込み
 // -----------------------------------------------------
-async function loadCalendar() {
-  if (birthdayList.length > 0) return birthdayList;
+async function loadCharacter() {
+  if (Object.keys(birthdayMap).length > 0) return birthdayMap;
 
   try {
-    const res = await fetch("calendar.json");
+    const res = await fetch("character.json");
     const data = await res.json();
 
-    // ▼ 修正：calendar.json のキーは birthday
-    birthdayList = data.birthday;
-    alert(birthdayList.length);
+    // 構造： { birthday: { "01": [ ... ], "02": [ ... ] } }
+    birthdayMap = data.birthday;
 
-    return birthdayList;
+    return birthdayMap;
 
   } catch (e) {
-    console.error("calendar.json 読み込みエラー：", e);
-    return [];
+    console.error("character.json 読み込みエラー：", e);
+    return {};
   }
 }
 
@@ -140,17 +130,16 @@ async function loadCalendar() {
 // 本日の誕生日
 // -----------------------------------------------------
 async function showBirthday() {
-  const list = await loadCalendar();
-  
+  const map = await loadCharacter();
+
   const now = new Date();
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-  const dd = String(now.getDate()).padStart(2, "0");
-  const today = `${mm}/${dd}`;
+  const mm = String(now.getMonth() + 1).padStart(2, "0");  // "01"
+  const dd = String(now.getDate()).padStart(2, "0");       // "05"
 
   const area = document.getElementById("birthdayArea");
 
-  // ▼ 修正：p.date を参照
-  const todayBirth = list.filter(p => p.date === today);
+  const list = map[mm] || [];
+  const todayBirth = list.filter(p => p.day === dd);
 
   if (todayBirth.length === 0) {
     area.textContent = "本日誕生日のキャラクターはいません。";
@@ -166,27 +155,27 @@ async function showBirthday() {
 // 今月の誕生日
 // -----------------------------------------------------
 async function showMonthBirthday() {
-  const list = await loadCalendar();
+  const map = await loadCharacter();
 
   const now = new Date();
   const mm = String(now.getMonth() + 1).padStart(2, "0");
 
   const area = document.getElementById("monthBirthdayArea");
 
-  const monthBirth = list.filter(p => p.date.startsWith(mm));
+  const list = map[mm] || [];
 
-  if (monthBirth.length === 0) {
+  if (list.length === 0) {
     area.textContent = "今月誕生日のキャラクターはいません。";
     return;
   }
 
-  area.innerHTML = monthBirth
-    .map(p => `・${p.name}（${p.kana}） …… ${p.date}<br>`)
+  area.innerHTML = list
+    .map(p => `・${p.name}（${p.kana}） …… ${mm}/${p.day}<br>`)
     .join("");
 }
 
 // -----------------------------------------------------
-// 誕生日コピー（今日）
+// 今日の誕生日コピー
 // -----------------------------------------------------
 function copyTodayBirthday() {
   const text = document.getElementById("birthdayArea").innerText;
@@ -198,7 +187,7 @@ function copyTodayBirthday() {
 }
 
 // -----------------------------------------------------
-// 誕生日コピー（今月）
+// 今月の誕生日コピー
 // -----------------------------------------------------
 function copyMonthBirthday() {
   const text = document.getElementById("monthBirthdayArea").innerText;
