@@ -142,7 +142,6 @@ function pickNormalTopics(scoreSum) {
 // 抽選本体（sub から呼ぶ）
 // =====================================================
 async function drawAllTopics() {
-  await loadAllJSONs();
 
   const birthdays = pickBirthday();
   const events = pickEvents();
