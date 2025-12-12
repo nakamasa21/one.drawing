@@ -3,91 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <title>お題ガチャ</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 20px;
-    }
 
-    /* ▼ テキストエリア + ボタン縦並びに変更 */
-    .topic-row {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 20px 0;
-      width: 100%;
-    }
-
-    /* ▼ textarea → div に変更したため調整 */
-    #topicArea {
-      width: 100%;
-      min-height: 120px;
-      font-size: 1.2rem;
-      padding: 10px;
-      background: #f0f0f0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      white-space: pre-wrap;
-    }
-
-    button {
-      padding: 10px 15px;
-      font-size: 1rem;
-      cursor: pointer;
-      width: fit-content;
-    }
-
-    /* コピー成功の視覚効果 */
-    .copied {
-      background: #4caf50;
-      color: white;
-    }
-
-    ul {
-      margin-top: 20px;
-      padding-left: 20px;
-    }
-
-    .topic-bold {
-      font-weight: bold;
-    }
-    .hashtag {
-      color: #00aaff; /* 水色 */
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
   <h1>お題ガチャ</h1>
 
-  <!-- ▼ お題表示部分（div + コピー） -->
-  <div class="topic-row">
-    <div id="topicArea">ここにお題が表示されます</div>
-    <button id="copyBtn">コピー</button>
-  </div>
+  <!-- ▼ 抽選結果（お題） -->
+  <section class="section-block">
+    <h2>本日のお題</h2>
+    <div class="topic-row">
+      <div id="topicArea">ここにお題が表示されます</div>
+      <button id="copyBtn">コピー</button>
+    </div>
 
-  <button id="drawBtn">お題を引く</button>
-  <button id="resetBtn">履歴リセット</button>
-  
-  <!-- 本日の誕生日 -->
-  <h2>本日の誕生日</h2>
-  <div id="birthdayArea" class="birthday-box">
-    読み込み中…
-  </div>
-  <button id="birthdayCopyBtn">コピー</button>
+    <div class="button-row">
+      <button id="drawBtn">お題を引く</button>
+      <button id="resetBtn">履歴リセット</button>
+    </div>
+  </section>
 
-  <!-- 今月の誕生日 -->
-  <h2>今月の誕生日</h2>
-  <div id="monthBirthdayArea" class="birthday-box">
-    読み込み中…
-  </div>
-  <button id="monthBirthdayCopyBtn">コピー</button>
+  <!-- ▼ 本日の誕生日 -->
+  <section class="section-block">
+    <h2>本日の誕生日</h2>
+    <div id="birthdayArea" class="birthday-box">読み込み中...</div>
+    <button id="birthdayCopyBtn">コピー</button>
+  </section>
 
-  <h2>履歴</h2>
-  <ul id="history"></ul>
+  <!-- ▼ 今月の誕生日 -->
+  <section class="section-block">
+    <h2>今月の誕生日</h2>
+    <div id="monthBirthdayArea" class="birthday-box">読み込み中...</div>
+    <button id="monthBirthdayCopyBtn">コピー</button>
+  </section>
 
-  <!-- JS 読み込み -->
-  <script src="main.js"></script>
+  <!-- ▼ 履歴 -->
+  <section class="section-block">
+    <h2>履歴</h2>
+    <ul id="history"></ul>
+  </section>
+
+  <!-- JS -->
+  <script src="./js/main.js"></script>
+  <script src="./js/sub.js"></script>
 
 </body>
 </html>
