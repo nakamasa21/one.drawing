@@ -1,174 +1,85 @@
-(function() {
-  const log = console.log;
-  console.log = function(...args) {
-    log.apply(console, args);
-    let box = document.getElementById("debugLogBox");
-    if (!box) {
-      box = document.createElement("pre");
-      box.id = "debugLogBox";
-      box.style = "white-space:pre-wrap; background:#222; color:#0f0; padding:10px;";
-      document.body.appendChild(box);
-    }
-    box.textContent += args.join(" ") + "\n";
-  };
-})();
-
-// =====================================================
-// main.js  データ読込 & 抽選ロジック
-// =====================================================
-
-let birthdayMap = {};
-let eventsMap = [];
-let topics = [];
-let levelScores = {};
-let usedTopics = JSON.parse(localStorage.getItem("usedTopics") || "[]");
-
 // -----------------------------
-// JSON 読込
+// デバッグ強化版 loadAllJSONs()
 // -----------------------------
 async function loadAllJSONs() {
-  const [birthday, events, topicsData, levelJson] = await Promise.all([
-    fetch("./data/birthday.json").then(r => r.json()),
-    fetch("./data/events.json").then(r => r.json()),
-    fetch("./data/topics.json").then(r => r.json()),
-    fetch("./data/levels.json").then(r => r.json())
-  ]);
-
-  birthdayMap = birthday.month;
-  levelScores = levelJson.levels;
-
-  // events.json → 3カテゴリを結合
-  eventsMap = [
-    ...events.standard.map(e => ({ ...e, category: "standard" })),
-    ...events.special.map(e => ({ ...e, category: "special" })),
-    ...events.inazumaEleven.map(e => ({ ...e, category: "inazumaEleven" }))
-  ];
-
-  // topics.json → categories の中身を全部 flatten
+  // clear previous (for re-entrancy)
+  birthdayMap = {};
+  eventsMap = [];
   topics = [];
-  for (const cat in topicsData.categories) {
-    topicsData.categories[cat].forEach(t => {
-      topics.push({
-        ...t,
-        category: cat
-      });
-    });
-  }
-}
+  levelScores = {};
 
-// =====================================================
-// 誕生日 抽選
-// =====================================================
-function pickBirthday() {
-  const now = new Date();
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-  const dd = String(now.getDate()).padStart(2, "0");
-
-  return birthdayMap[mm]?.filter(p => p.day === dd) || [];
-}
-
-// =====================================================
-// イベント日 抽選
-// =====================================================
-function pickEvents() {
-  const now = new Date();
-  const yyyy = String(now.getFullYear());
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-  const dd = String(now.getDate()).padStart(2, "0");
-
-  const results = [];
-
-  eventsMap.forEach(ev => {
-    if (ev.category === "inazumaEleven") {
-      if (ev.month === mm && ev.day === dd) {
-        const anniv = Number(yyyy) - Number(ev.year);
-        results.push({
-          ...ev,
-          title: `${ev.title}（${anniv}周年）`
-        });
+  // helper
+  async function safeFetchJson(path) {
+    console.log("fetch ->", path);
+    try {
+      const res = await fetch(path);
+      if (!res.ok) {
+        console.log(`⚠ fetch error ${res.status} ${res.statusText} for ${path}`);
+        return null;
       }
-      return;
-    }
-
-    // 通常イベント
-    if (ev.year === "") {
-      if (ev.month === mm && ev.day === dd) results.push(ev);
-    } else {
-      if (ev.year === yyyy && ev.month === mm && ev.day === dd) results.push(ev);
-    }
-  });
-
-  return results;
-}
-
-// =====================================================
-// 通常お題 抽選
-// =====================================================
-function pickNormalTopics(scoreSum) {
-  // 通常お題の件数決定
-  let count = 0;
-  if (scoreSum === 0) count = 2;
-  else if (scoreSum >= 1 && scoreSum <= 3) count = 1;
-  else count = 0;
-
-  if (count === 0) return [];
-
-  // 今月 seasonal 抽出
-  const now = new Date();
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-
-  let available = topics.filter(t => {
-    if (t.months) return t.months.includes(mm);
-    return true;
-  });
-
-  // usedTopics による除外
-  available = available.filter(t => {
-    return !usedTopics.some(u => u.title === t.title);
-  });
-
-  // score 合計は「誕生日 + イベント + 通常」で 4 にする必要がある
-  const targetScore = 4 - scoreSum;
-  if (targetScore <= 0) return [];
-
-  const picks = [];
-
-  // ランダムに選びつつ targetScore を満たす
-  let candidates = [...available];
-
-  while (picks.length < count && candidates.length > 0) {
-    const idx = Math.floor(Math.random() * candidates.length);
-    const t = candidates[idx];
-
-    const lv = levelScores[t.level] ?? 1;
-
-    if (lv <= targetScore) {
-      picks.push(t);
-      break; // 通常お題は最大でも１つ or 2つしか出ない → 1回で break
-    } else {
-      candidates.splice(idx, 1);
+      const j = await res.json();
+      console.log("✅ parsed", path);
+      return j;
+    } catch (err) {
+      console.log("‼ fetch/json error for", path, err && err.message ? err.message : err);
+      return null;
     }
   }
 
-  return picks;
-}
+  // fetch one by one so we can see which fails
+  const birthday = await safeFetchJson("./data/birthday.json");
+  const events = await safeFetchJson("./data/events.json");
+  const topicsData = await safeFetchJson("./data/topics.json");
+  const levelJson = await safeFetchJson("./data/levels.json");
 
-// =====================================================
-// 抽選本体（sub から呼ぶ）
-// =====================================================
-async function drawAllTopics() {
-  await loadAllJSONs();
+  // validate and assign with fallbacks
+  if (birthday && birthday.month && typeof birthday.month === "object") {
+    birthdayMap = birthday.month;
+    console.log("birthdayMap loaded, months:", Object.keys(birthdayMap).length);
+  } else {
+    console.log("⚠ birthday.json missing or invalid. Expected { month: {...} }");
+    birthdayMap = {};
+  }
 
-  const birthdays = pickBirthday();
-  const events = pickEvents();
+  if (levelJson && levelJson.levels) {
+    levelScores = levelJson.levels;
+    console.log("levelScores:", levelScores);
+  } else {
+    console.log("⚠ levels.json missing or invalid. Using default fallbacks.");
+    levelScores = { common:3, uncommon:2, limited:1, unique:1 };
+  }
 
-  // 誕生日・イベントのスコア合計
-  const scoreSum = [
-    ...birthdays.map(b => levelScores[b.level]),
-    ...events.map(e => levelScores[e.level])
-  ].reduce((a, b) => a + b, 0);
+  // events: we accept missing categories but avoid calling .map on undefined
+  if (events && typeof events === "object") {
+    const std = Array.isArray(events.standard) ? events.standard : [];
+    const spc = Array.isArray(events.special) ? events.special : [];
+    // try both possible key spellings for inazuma (defensive)
+    const ina = Array.isArray(events.inazumaEleven) ? events.inazumaEleven
+              : Array.isArray(events.inszumaEleven) ? events.inszumaEleven
+              : [];
+    eventsMap = [
+      ...std.map(e => ({ ...e, category: "standard" })),
+      ...spc.map(e => ({ ...e, category: "special" })),
+      ...ina.map(e => ({ ...e, category: "inazumaEleven" }))
+    ];
+    console.log(`events loaded: standard=${std.length}, special=${spc.length}, inazuma=${ina.length}`);
+  } else {
+    console.log("⚠ events.json missing or invalid");
+    eventsMap = [];
+  }
 
-  const normal = pickNormalTopics(scoreSum);
+  // topics: flatten categories safely
+  if (topicsData && topicsData.categories && typeof topicsData.categories === "object") {
+    topics = [];
+    for (const cat in topicsData.categories) {
+      const arr = Array.isArray(topicsData.categories[cat]) ? topicsData.categories[cat] : [];
+      arr.forEach(t => topics.push({ ...t, category: cat }));
+    }
+    console.log("topics loaded, total:", topics.length);
+  } else {
+    console.log("⚠ topics.json missing or invalid. topics empty.");
+    topics = [];
+  }
 
-  return { birthdays, events, normal };
+  console.log("loadAllJSONs finished.");
 }
