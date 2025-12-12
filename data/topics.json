@@ -7,7 +7,7 @@
       { "id": "s004", "title": "冬", "level": "common", "months": ["12", "01", "02"] }
     ],
 
-    "Inazuma11": [
+    "character": [
       { "id": "d002", "title": "選手", "level": "common" }
       { "id": "d001", "title": "監督", "level": "uncommon" },
       { "id": "d003", "title": "南雲原中学", "level": "limited" }
