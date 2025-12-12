@@ -1,0 +1,16 @@
+{
+  "categories": {
+    "seasonal": [
+   { "id": "s001", "title": "春", "level": "common", "months": ["03", "04", "05"] },
+      { "id": "s002", "title": "夏", "level": "common", "months": ["06", "07", "08"] },
+      { "id": "s003", "title": "秋", "level": "common", "months": ["09", "10", "11"] } ,
+      { "id": "s004", "title": "冬", "level": "common", "months": ["12", "01", "02"] }
+    ],
+
+    "Inazuma11": [
+      { "id": "d002", "title": "選手", "level": "common" }
+      { "id": "d001", "title": "監督", "level": "uncommon" },
+      { "id": "d003", "title": "南雲原中学", "level": "limited" }
+    ]
+  }
+}
