@@ -1,0 +1,115 @@
+{
+  "standard": [
+    { "year": "", "month": "01", "day": "01", "title": "元日", "level": "common" },
+    { "year": "2026", "month": "01", "day": "12", "title": "成人の日", "level": "common" },
+
+    { "year": "", "month": "02", "day": "11", "title": "建国記念の日", "level": "common" },
+    { "year": "", "month": "02", "day": "14", "title": "バレンタインデー", "level": "common" },
+
+    { "year": "", "month": "03", "day": "03", "title": "ひな祭り", "level": "common" },
+    { "year": "", "month": "03", "day": "14", "title": "ホワイトデー", "level": "common" },
+    { "year": "2026", "month": "03", "day": "20", "title": "春分の日", "level": "common" },
+
+    { "year": "", "month": "04", "day": "01", "title": "エイプリルフール", "level": "common" },
+    { "year": "", "month": "04", "day": "29", "title": "昭和の日", "level": "common" },
+
+    { "year": "", "month": "05", "day": "04", "title": "みどりの日", "level": "common" },
+    { "year": "", "month": "05", "day": "05", "title": "こどもの日", "level": "common" },
+    { "year": "2026", "month": "05", "day": "10", "title": "母の日", "level": "common" },
+
+    { "year": "2026", "month": "06", "day": "21", "title": "父の日", "level": "common" },
+
+    { "year": "", "month": "07", "day": "07", "title": "七夕", "level": "common" },
+    { "year": "2026", "month": "07", "day": "20", "title": "海の日", "level": "common" },
+
+    { "year": "", "month": "08", "day": "11", "title": "山の日", "level": "common" },
+
+    { "year": "2026", "month": "09", "day": "21", "title": "敬老の日", "level": "common" },
+    { "year": "2026", "month": "09", "day": "23", "title": "秋分の日", "level": "common" },
+
+    { "year": "", "month": "10", "day": "31", "title": "ハロウィン", "level": "common" },
+
+    { "year": "", "month": "11", "day": "03", "title": "文化の日", "level": "common" },
+    { "year": "2026", "month": "11", "day": "23", "title": "勤労感謝の日", "level": "common" },
+
+    { "year": "", "month": "12", "day": "24", "title": "クリスマスイブ", "level": "common" },
+    { "year": "", "month": "12", "day": "25", "title": "クリスマス", "level": "common" },
+    { "year": "", "month": "12", "day": "31", "title": "大晦日", "level": "common" }
+  ],
+
+  "special": [
+    { "year": "", "month": "02", "day": "02", "title": "ツインテールの日", "level": "common" },
+    { "year": "", "month": "02", "day": "09", "title": "肉の日", "level": "common" },
+    { "year": "", "month": "02", "day": "22", "title": "猫の日", "level": "common" },
+
+    { "year": "", "month": "03", "day": "09", "title": "サンキューの日", "level": "common" },
+
+    { "year": "", "month": "04", "day": "06", "title": "城の日", "level": "common" },
+
+    { "year": "", "month": "05", "day": "10", "title": "メイドの日", "level": "common" },
+    { "year": "", "month": "05", "day": "29", "title": "呉服の日", "level": "common" },
+
+    { "year": "", "month": "06", "day": "06", "title": "楽器の日", "level": "common" },
+
+    { "year": "", "month": "07", "day": "03", "title": "波の日", "level": "common" },
+    { "year": "", "month": "07", "day": "10", "title": "納豆の日", "level": "common" },
+
+    { "year": "", "month": "08", "day": "02", "title": "ハニーの日", "level": "common" },
+    { "year": "", "month": "08", "day": "02", "title": "バニーの日", "level": "common" },
+    { "year": "", "month": "08", "day": "10", "title": "ハートの日", "level": "common" },
+    { "year": "", "month": "08", "day": "19", "title": "バイクの日", "level": "common" },
+
+    { "year": "", "month": "09", "day": "06", "title": "黒の日", "level": "common" },
+
+    { "year": "", "month": "10", "day": "01", "title": "メガネの日", "level": "common" },
+    { "year": "", "month": "10", "day": "08", "title": "木の日", "level": "common" },
+    { "year": "", "month": "10", "day": "23", "title": "電信電話記念日", "level": "common" },
+
+    { "year": "", "month": "11", "day": "07", "title": "いい鍋の日", "level": "common" },
+    { "year": "", "month": "11", "day": "08", "title": "いい歯の日", "level": "common" },
+    { "year": "", "month": "11", "day": "11", "title": "ポッキー&プリッツの日", "level": "common" },
+    { "year": "", "month": "11", "day": "22", "title": "いい夫婦の日", "level": "common" },
+    { "year": "", "month": "11", "day": "23", "title": "いい兄さんの日", "level": "common" },
+    { "year": "", "month": "11", "day": "28", "title": "ニーハイの日", "level": "common" },
+
+    { "year": "", "month": "12", "day": "12", "title": "漢字の日", "level": "common" },
+    { "year": "", "month": "12", "day": "28", "title": "双子の日", "level": "common" }
+  ],
+
+  "inazumaEleven": [
+    { "year": "2008", "month": "08", "day": "22", "title": "イナズマイレブン（無印） 発売", "level": "common" },
+    { "year": "2008", "month": "10", "day": "05", "title": "イナズマイレブン フットボールフロンティア編 放送開始", "level": "common" },
+
+    { "year": "2009", "month": "04", "day": "08", "title": "イナズマイレブン 脅威の侵略者編 放送開始", "level": "common" },
+    { "year": "2009", "month": "10", "day": "01", "title": "イナズマイレブン2 ファイア／ブリザード 発売", "level": "common" },
+
+    { "year": "2010", "month": "02", "day": "03", "title": "イナズマイレブン 世界への挑戦!!編 放送開始", "level": "common" },
+    { "year": "2010", "month": "07", "day": "01", "title": "イナズマイレブン3 スパーク／ボンバー 発売", "level": "common" },
+    { "year": "2010", "month": "12", "day": "16", "title": "イナズマイレブン3 ジ・オーガ 発売", "level": "common" },
+    { "year": "2010", "month": "12", "day": "23", "title": "イナズマイレブン 最強軍団オーガ襲来 公開", "level": "common" },
+
+    { "year": "2011", "month": "05", "day": "04", "title": "イナズマイレブンGO 放送開始", "level": "common" },
+    { "year": "2011", "month": "07", "day": "16", "title": "イナズマイレブン ストライカーズ 発売", "level": "common" },
+    { "year": "2011", "month": "12", "day": "15", "title": "イナズマイレブンGO シャイン／ダーク 発売", "level": "common" },
+    { "year": "2011", "month": "12", "day": "22", "title": "イナズマイレブン ストライカーズ2012エクストリーム 発売", "level": "common" },
+    { "year": "2011", "month": "12", "day": "23", "title": "イナズマイレブンGO 究極の絆グリフォン 公開", "level": "common" },
+
+    { "year": "2012", "month": "04", "day": "18", "title": "イナズマイレブンGO クロノ・ストーン 放送開始", "level": "common" },
+    { "year": "2012", "month": "12", "day": "01", "title": "イナズマイレブンGO vs ダンボール戦機W 公開", "level": "common" },
+    { "year": "2012", "month": "12", "day": "13", "title": "イナズマイレブンGO2 クロノ・ストーン ネップウ／ライメイ 発売", "level": "common" },
+    { "year": "2012", "month": "12", "day": "20", "title": "イナズマイレブンGO ストライカーズ2013 発売", "level": "common" },
+    { "year": "2012", "month": "12", "day": "27", "title": "イナズマイレブン1・2・3!! 円堂守伝説 発売", "level": "common" },
+
+    { "year": "2013", "month": "05", "day": "08", "title": "イナズマイレブンGO ギャラクシー 放送開始", "level": "common" },
+    { "year": "2013", "month": "12", "day": "05", "title": "イナズマイレブンGO ギャラクシー BB/SN 発売", "level": "common" },
+
+    { "year": "2014", "month": "06", "day": "13", "title": "イナズマイレブン 超次元ドリームマッチ 公開", "level": "common" },
+
+    { "year": "2017", "month": "06", "day": "30", "title": "イナズマイレブン エブリデイ!!+ 発売", "level": "common" },
+
+    { "year": "2018", "month": "04", "day": "06", "title": "イナズマイレブン アレスの天秤 放送開始", "level": "common" },
+    { "year": "2018", "month": "10", "day": "05", "title": "イナズマイレブン オリオンの刻印 放送開始", "level": "common" },
+
+    { "year": "2024", "month": "12", "day": "27", "title": "イナズマイレブン・ザ・ムービー2025 公開", "level": "common" }
+  ]
+}
