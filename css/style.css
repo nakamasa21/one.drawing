@@ -1,0 +1,72 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+/* ウィジェット化 */
+.section-block {
+  margin-bottom: 40px;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ▼ テキストエリア + ボタン縦並び */
+.topic-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* 結果表示部分 */
+#topicArea {
+  width: 100%;
+  min-height: 120px;
+  font-size: 1.2rem;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  white-space: pre-wrap;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: fit-content;
+}
+
+/* コピー成功エフェクト */
+.copied {
+  background: #4caf50;
+  color: white;
+}
+
+/* 誕生日用 */
+.birthday-box {
+  padding: 10px;
+  background: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-height: 50px;
+}
+
+/* 履歴 */
+ul {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.topic-bold {
+  font-weight: bold;
+}
+
+.hashtag {
+  color: #00aaff;
+}
