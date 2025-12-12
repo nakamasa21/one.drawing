@@ -1,3 +1,18 @@
+(function() {
+  const log = console.log;
+  console.log = function(...args) {
+    log.apply(console, args);
+    let box = document.getElementById("debugLogBox");
+    if (!box) {
+      box = document.createElement("pre");
+      box.id = "debugLogBox";
+      box.style = "white-space:pre-wrap; background:#222; color:#0f0; padding:10px;";
+      document.body.appendChild(box);
+    }
+    box.textContent += args.join(" ") + "\n";
+  };
+})();
+
 // =====================================================
 // main.js  データ読込 & 抽選ロジック
 // =====================================================
