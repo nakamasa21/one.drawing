@@ -154,10 +154,5 @@ async function drawAllTopics() {
 
   const normal = pickNormalTopics(scoreSum);
 
-  // 通常お題が抽出できなかった時にだけアラート
-  if (normal.length === 0) {
-    alert("条件に一致する通常お題がありません");
-  }
-
   return { birthdays, events, normal };
 }
