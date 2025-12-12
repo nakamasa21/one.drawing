@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("birthdayCopyBtn").addEventListener("click", copyTodayBirthday);
   document.getElementById("monthBirthdayCopyBtn").addEventListener("click", copyMonthBirthday);
 
+  // ★ 初回のみ JSON 読み込み
   loadAllJSONs().then(() => {
     showBirthday();
     showMonthBirthday();
@@ -25,6 +26,11 @@ window.addEventListener("DOMContentLoaded", () => {
 // =====================================================
 async function drawTopicUI() {
   const result = await drawAllTopics();
+
+  // ★ 通常お題が無ければアラート
+  if (result.normal.length === 0) {
+    alert("条件に一致する通常お題がありません");
+  }
 
   const parts = [];
 
@@ -68,6 +74,8 @@ async function drawTopicUI() {
       level: t.level,
       date: todayStr
     });
+
+    // topics から削除
     const idx = topics.findIndex(x => x.title === t.title);
     if (idx !== -1) topics.splice(idx, 1);
   });
@@ -93,18 +101,16 @@ function resetHistoryUI() {
   usedTopics.length = 0;
   localStorage.removeItem("usedTopics");
 
-  loadAllJSONs().then(() => {
-    document.getElementById("topicArea").innerHTML = "ここにお題が表示されます";
-    updateHistory();
-  });
+  // ★ reload はしない（topics は main.js 側で管理）
+  document.getElementById("topicArea").innerHTML = "ここにお題が表示されます";
+  updateHistory();
 }
 
 // =====================================================
 // 誕生日UI
 // =====================================================
 async function showBirthday() {
-  await loadAllJSONs();
-
+  // ★ 再ロード禁止
   const now = new Date();
   const mm = String(now.getMonth() + 1).padStart(2, "0");
   const dd = String(now.getDate()).padStart(2, "0");
@@ -118,8 +124,7 @@ async function showBirthday() {
 }
 
 async function showMonthBirthday() {
-  await loadAllJSONs();
-
+  // ★ 再ロード禁止
   const now = new Date();
   const mm = String(now.getMonth() + 1).padStart(2, "0");
 
