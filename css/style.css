@@ -159,6 +159,44 @@ ul {
 }
 
 /* =========================
+   共通完了演出
+========================= */
+.action-done {
+  background: #4caf50 !important;
+  color: #fff !important;
+  border-color: #4caf50 !important;
+  animation: popDone 0.25s ease;
+}
+
+@keyframes popDone {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* =========================
+   ツイート文字数カウンター
+========================= */
+.tweet-counter {
+  text-align: right;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.tweet-counter.over {
+  color: #e53935;
+  font-weight: bold;
+}
+
+/* 無効状態 */
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* =========================
    スマホ調整
 ========================= */
 @media screen and (max-width: 768px) {
