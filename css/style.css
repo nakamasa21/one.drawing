@@ -221,3 +221,37 @@ button:disabled {
     font-size: 0.9rem;
   }
 }
+
+/* Xアイコンボタン */
+.x-btn {
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+/* SVGアイコン */
+.x-icon {
+  width: 16px;
+  height: 16px;
+  fill: #000;
+}
+
+/* hover */
+.x-btn:hover {
+  background: #f0f0f0;
+}
+
+/* 押下 */
+.x-btn:active {
+  background: #000;
+}
+
+.x-btn:active .x-icon {
+  fill: #fff;
+}
