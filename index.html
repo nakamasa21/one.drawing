@@ -14,10 +14,18 @@
   <!-- ▼ 抽選結果（お題） -->
   <section class="section-block">
     <h2>本日のお題</h2>
+
     <div class="topic-row">
       <div id="topicArea">ここにお題が表示されます</div>
+
+      <!-- 右上固定ボタン -->
       <button id="copyBtn">コピー</button>
       <button id="tweetBtn">ツイート</button>
+    </div>
+
+    <!-- ★ ツイート文字数カウンター -->
+    <div id="tweetCounter" class="tweet-counter">
+      0 / 280
     </div>
 
     <div class="button-row">
@@ -29,15 +37,25 @@
   <!-- ▼ 本日の誕生日 -->
   <section class="section-block">
     <h2>本日の誕生日</h2>
+
     <div id="birthdayArea" class="birthday-box">読み込み中...</div>
-    <button id="birthdayCopyBtn">コピー</button>
+
+    <div class="button-row">
+      <button id="birthdayCopyBtn">コピー</button>
+      <button id="birthdayTweetBtn">ツイート</button>
+    </div>
   </section>
 
   <!-- ▼ 今月の誕生日 -->
   <section class="section-block">
     <h2>今月の誕生日</h2>
+
     <div id="monthBirthdayArea" class="birthday-box">読み込み中...</div>
-    <button id="monthBirthdayCopyBtn">コピー</button>
+
+    <div class="button-row">
+      <button id="monthBirthdayCopyBtn">コピー</button>
+      <button id="monthBirthdayTweetBtn">ツイート</button>
+    </div>
   </section>
 
   <!-- ▼ 履歴 -->
