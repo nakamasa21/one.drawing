@@ -1,39 +1,81 @@
 // =====================================================
-// sub.js  UI / 表示 / コピー
+// sub.js  UI / 表示 / コピー / ツイート
 // =====================================================
+
+const TWEET_HASHTAG = "#イナイレ版ワンドロ勝負";
+let currentTweetBtnId = null;
 
 // -----------------------------
 // 初期イベント設定
 // -----------------------------
 window.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("drawBtn").addEventListener("click", drawTopicUI);
-  document.getElementById("resetBtn").addEventListener("click", resetHistoryUI);
+  drawBtn.addEventListener("click", drawTopicUI);
+  resetBtn.addEventListener("click", resetHistoryUI);
 
-  document.getElementById("copyBtn").addEventListener("click", copyTopic);
-  document.getElementById("birthdayCopyBtn").addEventListener("click", copyTodayBirthday);
-  document.getElementById("monthBirthdayCopyBtn").addEventListener("click", copyMonthBirthday);
-  
-  document.getElementById("tweetBtn").addEventListener("click", tweetTopic);
+  copyBtn.addEventListener("click", copyTopic);
+  tweetBtn.addEventListener("click", tweetTopic);
 
-  // ★ 初回のみ JSON 読み込み
+  birthdayCopyBtn.addEventListener("click", copyTodayBirthday);
+  birthdayTweetBtn.addEventListener("click", tweetTodayBirthday);
+
+  monthBirthdayCopyBtn.addEventListener("click", copyMonthBirthday);
+  monthBirthdayTweetBtn.addEventListener("click", tweetMonthBirthday);
+
   loadAllJSONs().then(() => {
     showBirthday();
     showMonthBirthday();
     updateHistory();
+    updateAllButtons();
   });
 });
 
 // =====================================================
-// 抽選 → UI 表示
+// ツイート共通処理
+// =====================================================
+function buildTweetText(baseText) {
+  if (!baseText.trim()) return "";
+  if (baseText.includes(TWEET_HASHTAG)) return baseText;
+  return `${baseText}\n${TWEET_HASHTAG}`;
+}
+
+function updateTweetCounter(baseText) {
+  const counter = document.getElementById("tweetCounter");
+  const tweetText = buildTweetText(baseText);
+  const len = tweetText.length;
+
+  counter.textContent = `${len} / 280`;
+  counter.classList.toggle("over", len > 280);
+
+  return len;
+}
+
+function startTweet(text) {
+  const tweetText = buildTweetText(text);
+  const len = updateTweetCounter(text);
+  if (!tweetText || len > 280) return;
+
+  sessionStorage.setItem("tweetPendingBtn", currentTweetBtnId);
+
+  window.location.href =
+    "https://twitter.com/intent/tweet?text=" +
+    encodeURIComponent(tweetText);
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (
+    document.visibilityState === "visible" &&
+    sessionStorage.getItem("tweetPendingBtn")
+  ) {
+    flashActionDone(sessionStorage.getItem("tweetPendingBtn"), "ツイート完了");
+    sessionStorage.removeItem("tweetPendingBtn");
+  }
+});
+
+// =====================================================
+// 抽選UI
 // =====================================================
 async function drawTopicUI() {
   const result = await drawAllTopics();
-
-  // ★ 通常お題が無ければアラート
-  if (result.normal.length === 0) {
-    alert("条件に一致する通常お題がありません");
-  }
-
   const parts = [];
 
   if (result.birthdays.length) {
@@ -60,127 +102,75 @@ async function drawTopicUI() {
   parts.push("");
   parts.push("制限時間は60分（最大120分）、21時より開始いたします。");
   parts.push("ルールをご確認の上ご参加ください。");
-  parts.push('<span class="hashtag">#イナイレ版ワンドロ勝負</span>');
 
-  document.getElementById("topicArea").innerHTML = parts.join("<br>");
+  topicArea.innerHTML = parts.join("<br>");
 
-  // usedTopics 保存
-  const today = new Date();
-  const todayStr =
-    `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
-
-  result.normal.forEach(t => {
-    usedTopics.push({
-      title: t.title,
-      category: t.category,
-      level: t.level,
-      date: todayStr
-    });
-
-    // topics から削除
-    const idx = topics.findIndex(x => x.title === t.title);
-    if (idx !== -1) topics.splice(idx, 1);
-  });
-
-  localStorage.setItem("usedTopics", JSON.stringify(usedTopics));
+  updateTweetCounter(topicArea.innerText);
+  updateAllButtons();
   updateHistory();
 }
 
 // =====================================================
-// 履歴表示
-// =====================================================
-function updateHistory() {
-  const ul = document.getElementById("history");
-  ul.innerHTML = "";
-  usedTopics.forEach(t => {
-    const li = document.createElement("li");
-    li.textContent = `${t.title}（${t.category}） — ${t.date}`;
-    ul.appendChild(li);
-  });
-}
-
-function resetHistoryUI() {
-  usedTopics.length = 0;
-  localStorage.removeItem("usedTopics");
-
-  // ★ reload はしない（topics は main.js 側で管理）
-  document.getElementById("topicArea").innerHTML = "ここにお題が表示されます";
-  updateHistory();
-}
-
-// =====================================================
-// 誕生日UI
-// =====================================================
-async function showBirthday() {
-  // ★ 再ロード禁止
-  const now = new Date();
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-  const dd = String(now.getDate()).padStart(2, "0");
-
-  const area = document.getElementById("birthdayArea");
-  const list = birthdayMap[mm]?.filter(p => p.day === dd) || [];
-
-  area.innerHTML = list.length
-    ? list.map(p => `・${p.name}（${p.kana}）<br>`).join("")
-    : "本日誕生日のキャラクターはいません。";
-}
-
-async function showMonthBirthday() {
-  // ★ 再ロード禁止
-  const now = new Date();
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-
-  const area = document.getElementById("monthBirthdayArea");
-  const list = birthdayMap[mm] || [];
-
-  area.innerHTML = list.length
-    ? list.map(p => `・${p.name}（${p.kana}） …… ${mm}/${p.day}<br>`).join("")
-    : "今月誕生日のキャラクターはいません。";
-}
-
-// =====================================================
-// コピー機能
+// コピー
 // =====================================================
 async function copyTopic() {
-  const text = document.getElementById("topicArea").innerText;
-  if (!text) return;
-  await navigator.clipboard.writeText(text);
-  flashCopied("copyBtn");
+  await navigator.clipboard.writeText(topicArea.innerText);
+  flashActionDone("copyBtn", "コピー完了");
 }
 
 function copyTodayBirthday() {
-  navigator.clipboard.writeText(
-    document.getElementById("birthdayArea").innerText
-  );
-  flashCopied("birthdayCopyBtn");
+  navigator.clipboard.writeText(birthdayArea.innerText);
+  flashActionDone("birthdayCopyBtn", "コピー完了");
 }
 
 function copyMonthBirthday() {
-  navigator.clipboard.writeText(
-    document.getElementById("monthBirthdayArea").innerText
-  );
-  flashCopied("monthBirthdayCopyBtn");
-}
-
-function flashCopied(btnId) {
-  const btn = document.getElementById(btnId);
-  btn.classList.add("copied");
-  setTimeout(() => btn.classList.remove("copied"), 800);
+  navigator.clipboard.writeText(monthBirthdayArea.innerText);
+  flashActionDone("monthBirthdayCopyBtn", "コピー完了");
 }
 
 // =====================================================
-// ツイート機能
+// ツイート
 // =====================================================
 function tweetTopic() {
-  const text = document.getElementById("topicArea").innerText;
-  if (!text.trim()) return;
-  if (text.length > 280) {
-      alert("ツイート文字数を超えています");
-      return;
-  }
-  const url =
-    "https://twitter.com/intent/tweet?text=" +
-    encodeURIComponent(text);
+  currentTweetBtnId = "tweetBtn";
+  startTweet(topicArea.innerText);
+}
 
-  window.location.href = url;
+function tweetTodayBirthday() {
+  currentTweetBtnId = "birthdayTweetBtn";
+  startTweet(birthdayArea.innerText);
+}
+
+function tweetMonthBirthday() {
+  currentTweetBtnId = "monthBirthdayTweetBtn";
+  startTweet(monthBirthdayArea.innerText);
+}
+
+// =====================================================
+// 共通UX
+// =====================================================
+function flashActionDone(btnId, text) {
+  const btn = document.getElementById(btnId);
+  const before = btn.textContent;
+
+  btn.textContent = text;
+  btn.classList.add("action-done");
+
+  setTimeout(() => {
+    btn.textContent = before;
+    btn.classList.remove("action-done");
+  }, 1200);
+}
+
+function updateAllButtons() {
+  const topicLen = updateTweetCounter(topicArea.innerText);
+
+  copyBtn.disabled = !topicArea.innerText.trim();
+  tweetBtn.disabled = !topicArea.innerText.trim() || topicLen > 280;
+
+  birthdayCopyBtn.disabled = !birthdayArea.innerText.trim();
+  birthdayTweetBtn.disabled = !birthdayArea.innerText.trim();
+
+  monthBirthdayCopyBtn.disabled = !monthBirthdayArea.innerText.trim();
+  monthBirthdayTweetBtn.disabled = !monthBirthdayArea.innerText.trim();
 }
