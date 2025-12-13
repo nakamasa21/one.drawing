@@ -1,4 +1,6 @@
-/* はみ出し防止 */
+/* =========================
+   はみ出し防止（そのまま）
+========================= */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -21,6 +23,7 @@ body {
 
 /* ▼ テキストエリア + ボタン縦並び */
 .topic-row {
+  position: relative;           /* ← コピーボタン配置の基準 */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -28,31 +31,72 @@ body {
   width: 100%;
 }
 
-/* 結果表示部分 */
+/* =========================
+   お題表示（ライトカード化）
+========================= */
 #topicArea {
-  width: 100%;
   min-height: 120px;
-  font-size: 1.2rem;
-  padding: 10px;
-  background: #f0f0f0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  font-size: 1.15rem;
+  padding: 20px;
+  padding-top: 48px;
+  background: #f7f8fa;
+  color: #222;
+  border-radius: 14px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   white-space: pre-wrap;
   max-width: 100%;
-  box-sizing: border-box;
 }
 
+/* =========================
+   コピーボタン（右上固定）
+========================= */
+#copyBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background: #ffffff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.2s, transform 0.1s, color 0.2s;
+}
+
+/* hover（PC） */
+#copyBtn:hover {
+  background: #f0f8ff;
+}
+
+/* 押下時 */
+#copyBtn:active {
+  background: #00aaff;
+  color: #fff;
+  transform: scale(0.96);
+}
+
+/* コピー成功時（JSで .copied 付与） */
+#copyBtn.copied {
+  background: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+}
+
+/* =========================
+   通常ボタン（他）
+========================= */
 button {
   padding: 10px 15px;
   font-size: 1rem;
   cursor: pointer;
   width: fit-content;
-}
-
-/* コピー成功エフェクト */
-.copied {
-  background: #4caf50;
-  color: white;
+  border-radius: 6px;
 }
 
 /* 誕生日用 */
@@ -74,6 +118,26 @@ ul {
   font-weight: bold;
 }
 
+/* ハッシュタグ */
 .hashtag {
   color: #00aaff;
+  font-weight: 600;
+}
+
+/* =========================
+   スマホ調整
+========================= */
+@media screen and (max-width: 768px) {
+  body {
+    margin: 10px;
+  }
+
+  #topicArea {
+    font-size: 1.05rem;
+  }
+
+  #copyBtn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
 }
