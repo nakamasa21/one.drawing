@@ -34,16 +34,23 @@ body {
 /* =========================
    お題表示（ライトカード化）
 ========================= */
-#topicArea,#birthdayArea,#monthBirthdayArea {
+#topicArea {
   min-height: 120px;
-  font-size: 1.5rem;
-  padding: 20px;
-  padding-top: 48px;
+}
+/* =========================
+   共通カードデザイン
+========================= */
+.card-box {
   background: #f7f8fa;
   color: #222;
+
+  padding: 20px;
+  padding-top: 48px; /* 右上ボタン用 */
+
   border-radius: 14px;
   border: 1px solid #e0e0e0;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
   white-space: pre-wrap;
   max-width: 100%;
 }
@@ -143,10 +150,6 @@ button {
 
 /* 誕生日用 */
 .birthday-box {
-  padding: 10px;
-  background: #fafafa;
-  border: 1px solid #ccc;
-  border-radius: 6px;
   min-height: 50px;
 }
 
