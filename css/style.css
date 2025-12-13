@@ -49,40 +49,46 @@ body {
 }
 
 /* =========================
-   コピーボタン（右上固定）
+   右上アクションボタン共通
 ========================= */
-#copyBtn {
+.action-btn {
   position: absolute;
   top: 10px;
-  right: 10px;
   z-index: 10;
 
   padding: 6px 12px;
   font-size: 0.85rem;
-  background: #ffffff;
-  color: #333;
-  border: 1px solid #ddd;
   border-radius: 8px;
   cursor: pointer;
+
+  background: #ffffff;
+  border: 1px solid #ddd;
 
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: background 0.2s, transform 0.1s, color 0.2s;
 }
 
+/* =========================
+   コピーボタン（右上固定）
+========================= */
+.copyBtn {
+  right: 10px;
+}
+
 /* hover（PC） */
-#copyBtn:hover {
+.copyBtn:hover {
   background: #f0f8ff;
 }
 
 /* 押下時 */
-#copyBtn:active {
+.copyBtn:active {
   background: #00aaff;
   color: #fff;
   transform: scale(0.96);
 }
 
 /* コピー成功時（JSで .copied 付与） */
-#copyBtn.copied {
+.copyBtn.copied {
   background: #4caf50;
   color: #fff;
   border-color: #4caf50;
@@ -91,35 +97,29 @@ body {
 /* =========================
    ツイートボタン
 ========================= */
-#tweetBtn {
-  position: absolute;
-  top: 10px;
+.tweetBtn {
   right: 90px;
-
-  z-index: 10;
-  padding: 6px 12px;
-  font-size: 0.85rem;
-
-  background: #ffffff;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  cursor: pointer;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: background 0.2s, transform 0.1s, color 0.2s;
+  color: #1d9bf0;
+  border-color: #cfe8ff;
 }
 
 /* hover */
-#tweetBtn:hover {
-  background: #f0f8ff;
+.tweetBtn:hover {
+  background: #e8f3ff;
 }
 
 /* 押下時 */
-#tweetBtn:active {
+.tweetBtn:active {
   background: #1d9bf0;
   color: #fff;
   transform: scale(0.96);
+}
+
+/* 完了演出 */
+.action-done {
+  background: #4caf50 !important;
+  color: #off !important;
+  border-color: #4caf50 !important;
 }
 
 /* =========================
