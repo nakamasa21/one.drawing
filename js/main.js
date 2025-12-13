@@ -154,5 +154,18 @@ async function drawAllTopics() {
 
   const normal = pickNormalTopics(scoreSum);
 
+  // 使用済
+  const today = new Date().toLocaleDateString("ja-JP");
+
+  normal.forEach(t => {
+    usedTopics.push({
+      title: t.title,
+      category: t.category,
+      level:t.level,
+      date: today
+    });
+  });
+  localStorage.setItem("usedTopics", JSON.stringify(usedTopics));
+  
   return { birthdays, events, normal };
 }
