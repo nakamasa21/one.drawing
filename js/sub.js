@@ -1,5 +1,5 @@
 // =====================================================
-// sub.js  UI / 表示 / コピー / ツイート
+// sub.js  UI / 表示 / コピー / ツイート（最終安定版）
 // =====================================================
 
 const TWEET_HASHTAG = "#イナイレ版ワンドロ勝負";
@@ -9,31 +9,19 @@ const TWEET_HASHTAG = "#イナイレ版ワンドロ勝負";
 // -----------------------------
 window.addEventListener("DOMContentLoaded", () => {
 
-  const drawBtn = document.getElementById("drawBtn");
-  const resetBtn = document.getElementById("resetBtn");
+  document.getElementById("drawBtn").addEventListener("click", drawTopicUI);
+  document.getElementById("resetBtn").addEventListener("click", resetHistoryUI);
 
-  const copyBtn = document.getElementById("copyBtn");
-  const tweetBtn = document.getElementById("tweetBtn");
+  document.getElementById("copyBtn").addEventListener("click", copyTopic);
+  document.getElementById("tweetBtn").addEventListener("click", tweetTopic);
 
-  const birthdayCopyBtn = document.getElementById("birthdayCopyBtn");
-  const birthdayTweetBtn = document.getElementById("birthdayTweetBtn");
+  document.getElementById("birthdayCopyBtn").addEventListener("click", copyTodayBirthday);
+  document.getElementById("birthdayTweetBtn").addEventListener("click", tweetTodayBirthday);
 
-  const monthBirthdayCopyBtn = document.getElementById("monthBirthdayCopyBtn");
-  const monthBirthdayTweetBtn = document.getElementById("monthBirthdayTweetBtn");
+  document.getElementById("monthBirthdayCopyBtn").addEventListener("click", copyMonthBirthday);
+  document.getElementById("monthBirthdayTweetBtn").addEventListener("click", tweetMonthBirthday);
 
-  drawBtn.addEventListener("click", drawTopicUI);
-  resetBtn.addEventListener("click", resetHistoryUI);
-
-  copyBtn.addEventListener("click", copyTopic);
-  tweetBtn.addEventListener("click", tweetTopic);
-
-  birthdayCopyBtn.addEventListener("click", copyTodayBirthday);
-  birthdayTweetBtn.addEventListener("click", tweetTodayBirthday);
-
-  monthBirthdayCopyBtn.addEventListener("click", copyMonthBirthday);
-  monthBirthdayTweetBtn.addEventListener("click", tweetMonthBirthday);
-
-  // JSON 読み込み
+  // JSON 読み込み完了後に表示
   loadAllJSONs().then(() => {
     showBirthday();
     showMonthBirthday();
@@ -77,19 +65,6 @@ async function drawTopicUI() {
 
   const topicArea = document.getElementById("topicArea");
   topicArea.innerHTML = parts.join("<br>");
-
-  // 使用履歴保存
-  const today = new Date();
-  const todayStr =
-    `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
-
-  result.normal.forEach(t => {
-    usedTopics.push({ ...t, date: todayStr });
-    const idx = topics.findIndex(x => x.title === t.title);
-    if (idx !== -1) topics.splice(idx, 1);
-  });
-
-  localStorage.setItem("usedTopics", JSON.stringify(usedTopics));
 
   updateHistory();
   updateAllButtonStates();
@@ -192,42 +167,32 @@ function startTweet(text, btnId) {
 }
 
 function tweetTopic() {
-  startTweet(
-    document.getElementById("topicArea").innerText,
-    "tweetBtn"
-  );
+  startTweet(document.getElementById("topicArea").innerText, "tweetBtn");
 }
 
 function tweetTodayBirthday() {
-  startTweet(
-    document.getElementById("birthdayArea").innerText,
-    "birthdayTweetBtn"
-  );
+  startTweet(document.getElementById("birthdayArea").innerText, "birthdayTweetBtn");
 }
 
 function tweetMonthBirthday() {
-  startTweet(
-    document.getElementById("monthBirthdayArea").innerText,
-    "monthBirthdayTweetBtn"
-  );
+  startTweet(document.getElementById("monthBirthdayArea").innerText, "monthBirthdayTweetBtn");
 }
 
 // =====================================================
-// ツイート復帰時フィードバック
+// ツイート復帰フィードバック
 // =====================================================
 document.addEventListener("visibilitychange", () => {
-  if (
-    document.visibilityState === "visible" &&
-    sessionStorage.getItem("tweetPendingBtn")
-  ) {
+  if (document.visibilityState === "visible") {
     const btnId = sessionStorage.getItem("tweetPendingBtn");
-    sessionStorage.removeItem("tweetPendingBtn");
-    flashActionDone(btnId, "ツイート完了");
+    if (btnId) {
+      sessionStorage.removeItem("tweetPendingBtn");
+      flashActionDone(btnId, "ツイート完了");
+    }
   }
 });
 
 // =====================================================
-// 共通UX / 状態管理
+// 共通UX
 // =====================================================
 function flashActionDone(btnId, text) {
   const btn = document.getElementById(btnId);
