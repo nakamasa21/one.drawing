@@ -52,8 +52,6 @@ body {
    右上アクションボタン共通
 ========================= */
 .action-btn {
-  position: absolute;
-  top: 10px;
   z-index: 10;
 
   padding: 6px 12px;
@@ -68,15 +66,21 @@ body {
   transition: background 0.2s, transform 0.1s, color 0.2s;
 }
 
+/* お題カード右上固定用 */
+.topic-row .action-btn {
+  position: absolute;
+  top: 10px;
+}
+
 /* =========================
    コピーボタン（右上固定）
 ========================= */
-.copy {
+.topic-row .copy {
   right: 10px;
 }
 
 /* hover（PC） */
-.copyBtn:hover {
+.copy:hover {
   background: #f0f8ff;
 }
 
@@ -97,8 +101,12 @@ body {
 /* =========================
    ツイートボタン
 ========================= */
-.tweet {
+
+.topic-row .tweet {
   right: 90px;
+}
+
+.tweet {
   color: #1d9bf0;
   border-color: #cfe8ff;
 }
