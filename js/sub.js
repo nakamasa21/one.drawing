@@ -12,6 +12,8 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("copyBtn").addEventListener("click", copyTopic);
   document.getElementById("birthdayCopyBtn").addEventListener("click", copyTodayBirthday);
   document.getElementById("monthBirthdayCopyBtn").addEventListener("click", copyMonthBirthday);
+  
+  document.getElementById("tweetBtn").addEventListener("click", tweetTopic);
 
   // ★ 初回のみ JSON 読み込み
   loadAllJSONs().then(() => {
@@ -164,4 +166,21 @@ function flashCopied(btnId) {
   const btn = document.getElementById(btnId);
   btn.classList.add("copied");
   setTimeout(() => btn.classList.remove("copied"), 800);
+}
+
+// =====================================================
+// ツイート機能
+// =====================================================
+function tweetTopic() {
+  const text = document.getElementById("topicArea").innerText;
+  if (!text.trim()) return;
+  if (text.length > 280) {
+      alert("ツイート文字数を超えています");
+      return;
+  }
+  const url =
+    "https://twitter.com/intent/tweet?text=" +
+    encodeURIComponent(text);
+
+  window.location.href = url;
 }
