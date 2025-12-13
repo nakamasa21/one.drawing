@@ -65,6 +65,21 @@ async function drawTopicUI() {
 
   const topicArea = document.getElementById("topicArea");
   topicArea.innerHTML = parts.join("<br>");
+  
+  const today = new Date();
+  const todayStr =
+    `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
+
+  result.normal.forEach(t => {
+    usedTopics.push({
+      title: t.title,
+      category: t.category,
+      level: t.level,
+      date: todayStr
+    });
+  });
+
+  localStorage.setItem("usedTopics", JSON.stringify(usedTopics));
 
   updateHistory();
   updateAllButtonStates();
