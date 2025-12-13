@@ -58,7 +58,7 @@ async function drawTopicUI() {
   parts.push("");
   parts.push("制限時間は60分（最大120分）、21時より開始いたします。");
   parts.push("ルールをご確認の上ご参加ください。");
-  parts.push("#イナイレ版ワンドロ勝負");
+  parts.push('<span class="hashtag">#イナイレ版ワンドロ勝負</span>');
 
   document.getElementById("topicArea").innerHTML = parts.join("<br>");
 
