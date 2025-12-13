@@ -34,9 +34,9 @@ body {
 /* =========================
    お題表示（ライトカード化）
 ========================= */
-#topicArea {
+#topicArea,#birthdayArea,#monthBirthdayArea {
   min-height: 120px;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   padding: 20px;
   padding-top: 48px;
   background: #f7f8fa;
