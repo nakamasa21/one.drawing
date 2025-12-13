@@ -71,7 +71,7 @@ body {
 /* =========================
    コピーボタン（右上固定）
 ========================= */
-.copyBtn {
+.copy {
   right: 10px;
 }
 
@@ -81,14 +81,14 @@ body {
 }
 
 /* 押下時 */
-.copyBtn:active {
+.copy:active {
   background: #00aaff;
   color: #fff;
   transform: scale(0.96);
 }
 
 /* コピー成功時（JSで .copied 付与） */
-.copyBtn.copied {
+.copied {
   background: #4caf50;
   color: #fff;
   border-color: #4caf50;
@@ -97,19 +97,19 @@ body {
 /* =========================
    ツイートボタン
 ========================= */
-.tweetBtn {
+.tweet {
   right: 90px;
   color: #1d9bf0;
   border-color: #cfe8ff;
 }
 
 /* hover */
-.tweetBtn:hover {
+.tweet:hover {
   background: #e8f3ff;
 }
 
 /* 押下時 */
-.tweetBtn:active {
+.tweet:active {
   background: #1d9bf0;
   color: #fff;
   transform: scale(0.96);
