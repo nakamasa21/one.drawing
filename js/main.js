@@ -91,53 +91,54 @@ function pickEvents() {
 // =====================================================
 function pickNormalTopics(scoreSum) {
   // 通常お題の件数決定
-  let count = 0;
-  if (scoreSum === 0) count = 2;
-  else if (scoreSum >= 1 && scoreSum <= 3) count = 1;
-  else count = 0;
-
+  let count = scoreSum === 0 ? 2 : (scoreSum <= 3 ? 1 : 0);
   if (count === 0) return [];
-
-  // 今月 seasonal 抽出
-  const now = new Date();
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-
-  let available = topics.filter(t => {
+  
+  // score 合計は 「誕生日 + イベント + 通常」で 4 にする必要がある
+  const targetScore = 4 - scoreSum;
+  // 「誕生日 + イベント」が4以上の場合、通常お題なし
+  if (targetScore <= 0) return [];
+  
+  const mm = String(new Date().getMonth() + 1).padStart(2, "0");
+  // 今月 seasonal 抽出、使用済を除外
+  let candidates = topics.filter(t => {
     if (t.months) return t.months.includes(mm);
     return true;
-  });
-
-  // usedTopics による除外
-  available = available.filter(t => {
-    return !usedTopics.some(u => u.title === t.title);
-  });
-
-  // score 合計は「誕生日 + イベント + 通常」で 4 にする必要がある
-  const targetScore = 4 - scoreSum;
-  if (targetScore <= 0) return [];
+  }).filter(t => !usedTopics.some(u => u.title === t.title));
 
   const picks = [];
+  let remainScore = targetScore;
 
-  // ランダムに選びつつ targetScore を満たす
-  let candidates = [...available];
+  // 通常お題選出
+  while (picks.length < count && remainScore > 0) {
 
-  while (picks.length < count && candidates.length > 0) {
-    const idx = Math.floor(Math.random() * candidates.length);
-    const t = candidates[idx];
+    let pool = candidates.filter(t => {
+      const lv = levelScores[t.level] ?? 1;
+      return lv <= remainScore;
+    });
 
+    // 最終段階は「一致する level に限定」
+    if (remainScore <= 3) {
+      const exact = pool.filter(t => {
+        const lv = levelScores[t.level] ?? 1;
+        return lv === remainScore;
+      });
+      if (exact.length) pool = exact;
+    }
+
+    if (!pool.length) return []; // 失敗
+
+    const t = pool[Math.floor(Math.random() * pool.length)];
     const lv = levelScores[t.level] ?? 1;
 
-    if (lv <= targetScore) {
-      picks.push(t);
-      break; // 通常お題は最大でも１つ or 2つしか出ない → 1回で break
-    } else {
-      candidates.splice(idx, 1);
-    }
+    picks.push(t);
+    remainScore -= lv;
+
+    candidates = candidates.filter(x => x.title !== t.title);
   }
 
-  return picks;
+  return remainScore === 0 ? picks : [];
 }
-
 // =====================================================
 // 抽選本体（sub から呼ぶ）
 // =====================================================
