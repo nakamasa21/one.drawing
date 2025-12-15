@@ -7,6 +7,7 @@ let eventsMap = [];
 let topics = [];
 let levelScores = {};
 let usedTopics = JSON.parse(localStorage.getItem("usedTopics") || "[]");
+let tweetConfig = {};
 
 // -----------------------------
 // JSON 読込
@@ -16,7 +17,8 @@ async function loadAllJSONs() {
     fetch("./data/birthday.json").then(r => r.json()),
     fetch("./data/events.json").then(r => r.json()),
     fetch("./data/topics.json").then(r => r.json()),
-    fetch("./data/levels.json").then(r => r.json())
+    fetch("./data/levels.json").then(r => r.json()),
+    fetch("./data/tweet.json").then(r => r.json())
   ]);
 
   birthdayMap = birthday.month;
@@ -39,6 +41,8 @@ async function loadAllJSONs() {
       });
     });
   }
+  
+  tweetConfig = tweetJson;
 }
 
 // =====================================================
