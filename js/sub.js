@@ -277,6 +277,7 @@ function buildAnnounceTextFromResult(result) {
 
   return tpl.map(line =>
     line
+      .replace("{{START}}", tweetConfig.times.start)
       .replace("{{TOPICS}}", topicsText)
       .replace("{{POST_FROM}}", tweetConfig.times.postFrom)
       .replace("{{POST_TO}}", tweetConfig.times.postTo)
