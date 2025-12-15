@@ -43,8 +43,8 @@ window.addEventListener("DOMContentLoaded", () => {
 async function drawTopicUI() {
   lastDrawResult = await drawAllTopics();
   const result = lastDrawResult;
-  const topicAreaText = buildTopicAreaTextFromResult(result);
-  if(topicArea == "") {
+  const topicAreaText = buildTopicAreaTextFromResult(lastDrawResult);
+  if(topicAreaText == "") {
     alert("お題の抽出に失敗しました。")
     return;
   }
