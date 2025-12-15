@@ -43,35 +43,13 @@ window.addEventListener("DOMContentLoaded", () => {
 async function drawTopicUI() {
   lastDrawResult = await drawAllTopics();
   const result = lastDrawResult;
-  const parts = [];
-
-  if (result.birthdays.length) {
-    parts.push("本日の誕生日キャラクター：");
-    result.birthdays.forEach(b => parts.push(`・${b.name}（${b.kana}）`));
-    parts.push("");
+  const topicAreaText = buildTopicAreaTextFromResult(result);
+  if(topicArea == "") {
+    alert("お題の抽出に失敗しました。")
+    return;
   }
 
-  if (result.events.length) {
-    parts.push("本日のイベント：");
-    result.events.forEach(ev => parts.push(`・${ev.title}（${ev.level}）`));
-    parts.push("");
-  }
-
-  if (result.normal.length) {
-    parts.push("本日のお題（通常）：");
-    result.normal.forEach(t =>
-      parts.push(`・${t.title}（${t.category} / ${t.level}）`)
-    );
-  } else {
-    parts.push("本日は通常お題の抽出はありません。");
-  }
-
-  parts.push("");
-  parts.push("制限時間は60分（最大120分）、21時より開始いたします。");
-  parts.push("ルールをご確認の上ご参加ください。");
-
-  const topicArea = document.getElementById("topicArea");
-  topicArea.innerHTML = parts.join("<br>");
+  document.getElementById("topicArea").innerHTML = topicAreaText;
   
   const today = new Date();
   const todayStr =
@@ -94,7 +72,29 @@ async function drawTopicUI() {
   document.getElementById("announceArea").innerText =
   buildAnnounceTextFromResult(lastDrawResult);
 }
+// =====================================================
+// お題（誕生日、イベント、通常）
+// =====================================================
+function buildTopicLinesFromResult(result) {
+  const lines = [];
 
+  if (result.birthdays?.length) {
+    result.birthdays.forEach(b => {
+      lines.push(`・${b.name}（誕生日）`);
+    });
+  }
+  if (result.events?.length) {
+    result.events.forEach(e => {
+      lines.push(`・${e.title}`);
+    });
+  }
+  if (result.normal?.length) {
+    result.normal.forEach(t => {
+      lines.push(`・${t.title}（${t.category} / ${t.level}）`);
+    });
+  }
+  return lines.join("\n");
+}
 // =====================================================
 // 履歴
 // =====================================================
@@ -266,20 +266,46 @@ function updateAllButtonStates() {
 // =====================================================
 // ツイート分作成
 // =====================================================
+function buildTextFromTemplate(templateLines, vars) {
+  return templateLines.map(line => {
+    let text = line;
+    for (const key in vars) {
+      text = text.replaceAll(`{{${key}}}`, vars[key]);
+    }
+    return text;
+  }).join("\n");
+}
+
+function buildTopicAreaTextFromResult(result) {
+  if (!result) return "";
+
+  const topicsText = buildTopicLinesFromResult(result);
+
+  if (!topicsText) return "";
+
+  return buildTextFromTemplate(
+    tweetConfig.templates.topics,
+    {
+      START: tweetConfig.times.start,
+      TOPICS: topicsText
+    }
+  );
+}
+
 function buildAnnounceTextFromResult(result) {
-  if (!result || !result.normal.length) return "";
+  if (!result) return "";
 
-  const topicsText = result.normal
-    .map(t => `・${t.title}（${t.category} / ${t.level}）`)
-    .join("\n");
+  const topicsText = buildTopicLinesFromResult(result);
 
-  const tpl = tweetConfig.templates.announce;
+  if (!topicsText) return "";
 
-  return tpl.map(line =>
-    line
-      .replace("{{START}}", tweetConfig.times.start)
-      .replace("{{TOPICS}}", topicsText)
-      .replace("{{POST_FROM}}", tweetConfig.times.postFrom)
-      .replace("{{POST_TO}}", tweetConfig.times.postTo)
-  ).join("\n");
+  return buildTextFromTemplate(
+    tweetConfig.templates.announce,
+    {
+      START: tweetConfig.times.start,
+      TOPICS: topicsText,
+      POST_FROM: tweetConfig.times.postFrom,
+      POST_TO: tweetConfig.times.postTo
+    }
+  );
 }
