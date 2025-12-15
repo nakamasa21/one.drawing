@@ -21,6 +21,9 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("monthBirthdayCopyBtn").addEventListener("click", copyMonthBirthday);
   document.getElementById("monthBirthdayTweetBtn").addEventListener("click", tweetMonthBirthday);
 
+  document.getElementById("announceCopyBtn").addEventListener("click", copyAnnounce);
+  document.getElementById("announceTweetBtn").addEventListener("click", tweetAnnounce);
+  
   // JSON 読み込み完了後に表示
   loadAllJSONs().then(() => {
     showBirthday();
