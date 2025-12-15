@@ -68,7 +68,7 @@ async function drawTopicUI() {
 
   updateHistory();
   updateAllButtonStates();
-  updateTweetCounter(topicArea.innerText);
+  updateTweetCounter(document.getElementById("topicArea").innerText);
   document.getElementById("announceArea").innerText =
   buildAnnounceTextFromResult(lastDrawResult);
 }
@@ -112,7 +112,8 @@ function resetHistoryUI() {
   usedTopics.length = 0;
   localStorage.removeItem("usedTopics");
 
-  document.getElementById("topicArea").innerHTML = "ここにお題が表示されます";
+  document.getElementById("topicArea").innerHTML = "ここにお題が表示されます。";
+  document.getElementById("announceArea").innerText = "お題を引くとここに開始文が表示されます。"
   updateHistory();
   updateAllButtonStates();
   updateTweetCounter("");
@@ -153,28 +154,28 @@ async function copyTopic() {
   const text = document.getElementById("topicArea").innerText.trim();
   if (!text) return;
   await navigator.clipboard.writeText(text);
-  flashActionDone("copyBtn", "コピー完了");
+  flashActionDone("copyBtn", "Copied");
 }
 
 function copyTodayBirthday() {
   const text = document.getElementById("birthdayArea").innerText.trim();
   if (!text) return;
   navigator.clipboard.writeText(text);
-  flashActionDone("birthdayCopyBtn", "コピー完了");
+  flashActionDone("birthdayCopyBtn", "Copied");
 }
 
 function copyMonthBirthday() {
   const text = document.getElementById("monthBirthdayArea").innerText.trim();
   if (!text) return;
   navigator.clipboard.writeText(text);
-  flashActionDone("monthBirthdayCopyBtn", "コピー完了");
+  flashActionDone("monthBirthdayCopyBtn", "Copied");
 }
 
 function copyAnnounce() {
   const text = document.getElementById("announceArea").innerText.trim();
   if (!text) return;
   navigator.clipboard.writeText(text);
-  flashActionDone("announceCopyBtn", "コピー完了");
+  flashActionDone("announceCopyBtn", "Copied");
 }
 
 function tweetAnnounce() {
@@ -223,7 +224,7 @@ document.addEventListener("visibilitychange", () => {
     const btnId = sessionStorage.getItem("tweetPendingBtn");
     if (btnId) {
       sessionStorage.removeItem("tweetPendingBtn");
-      flashActionDone(btnId, "ツイート完了");
+      flashActionDone(btnId, "Posted");
     }
   }
 });
