@@ -2,7 +2,9 @@
 // sub.js  UI / 表示 / コピー / ツイート（最終安定版）
 // =====================================================
 
-const TWEET_HASHTAG = "";
+let TWEET_HASHTAG = "";
+let lastDrawResult = null;
+
 
 // -----------------------------
 // 初期イベント設定
@@ -39,9 +41,9 @@ window.addEventListener("DOMContentLoaded", () => {
 // 抽選 → UI 表示
 // =====================================================
 async function drawTopicUI() {
-  const result = await drawAllTopics();
+  lastDrawResult = await drawAllTopics();
+  const result = lastDrawResult;
   const parts = [];
-  const lastDrawResult = result;
 
   if (result.birthdays.length) {
     parts.push("本日の誕生日キャラクター：");
