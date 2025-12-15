@@ -13,7 +13,7 @@ let tweetConfig = {};
 // JSON 読込
 // -----------------------------
 async function loadAllJSONs() {
-  const [birthday, events, topicsData, levelJson] = await Promise.all([
+  const [birthday, events, topicsData, levelJson, tweetJson] = await Promise.all([
     fetch("./data/birthday.json").then(r => r.json()),
     fetch("./data/events.json").then(r => r.json()),
     fetch("./data/topics.json").then(r => r.json()),
