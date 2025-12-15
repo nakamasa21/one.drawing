@@ -41,6 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
 async function drawTopicUI() {
   const result = await drawAllTopics();
   const parts = [];
+  const lastDrawResult = result;
 
   if (result.birthdays.length) {
     parts.push("本日の誕生日キャラクター：");
