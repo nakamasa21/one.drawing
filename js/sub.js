@@ -164,6 +164,19 @@ function copyMonthBirthday() {
   flashActionDone("monthBirthdayCopyBtn", "コピー完了");
 }
 
+function copyAnnounce() {
+  const text = document.getElementById("announceArea").innerText.trim();
+  if (!text) return;
+  navigator.clipboard.writeText(text);
+  flashActionDone("announceCopyBtn", "コピー完了");
+}
+
+function tweetAnnounce() {
+  startTweet(
+    document.getElementById("announceArea").innerText,
+    "announceTweetBtn"
+  );
+}
 // =====================================================
 // ツイート
 // =====================================================
