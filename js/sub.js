@@ -2,7 +2,7 @@
 // sub.js  UI / 表示 / コピー / ツイート（最終安定版）
 // =====================================================
 
-const TWEET_HASHTAG = "#イナイレ版ワンドロ勝負";
+const TWEET_HASHTAG = "";
 
 // -----------------------------
 // 初期イベント設定
@@ -31,6 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
     updateHistory();
     updateAllButtonStates();
     updateTweetCounter("");
+    TWEET_HASHTAG = tweetConfig.hashtag;
   });
 });
 
@@ -255,4 +256,24 @@ function updateAllButtonStates() {
 
   document.getElementById("copyBtn").disabled = !topicText;
   document.getElementById("tweetBtn").disabled = !topicText || len > 280;
+}
+
+// =====================================================
+// ツイート分作成
+// =====================================================
+function buildAnnounceTextFromResult(result) {
+  if (!result || !result.normal.length) return "";
+
+  const topicsText = result.normal
+    .map(t => `・${t.title}（${t.category} / ${t.level}）`)
+    .join("\n");
+
+  const tpl = tweetConfig.templates.announce;
+
+  return tpl.map(line =>
+    line
+      .replace("{{TOPICS}}", topicsText)
+      .replace("{{POST_FROM}}", tweetConfig.times.postFrom)
+      .replace("{{POST_TO}}", tweetConfig.times.postTo)
+  ).join("\n");
 }
