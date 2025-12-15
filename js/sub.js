@@ -88,6 +88,8 @@ async function drawTopicUI() {
   updateHistory();
   updateAllButtonStates();
   updateTweetCounter(topicArea.innerText);
+  document.getElementById("announceArea").innerText =
+  buildAnnounceTextFromResult(lastDrawResult);
 }
 
 // =====================================================
