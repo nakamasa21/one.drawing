@@ -39,6 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
   .catch(err => {
     console.error("JSON load error", err);
     alert("データの読み込みに失敗しました。");
+    alert(err);
   });
 });
 
