@@ -133,24 +133,24 @@ function showBirthday() {
   const mm = String(now.getMonth() + 1).padStart(2, "0");
   const dd = String(now.getDate()).padStart(2, "0");
 
-  const area = document.getElementById("birthdayArea");
   const list = birthdayMap[mm]?.filter(p => p.day === dd) || [];
+  const text = buildBirthdayText(list, "birthdayToday");
 
-  area.innerHTML = list.length
-    ? list.map(p => `・${p.name}（${p.kana}）<br>`).join("")
-    : "本日誕生日のキャラクターはいません。";
+  document.getElementById("birthdayArea").innerText =
+    text || "本日誕生日のキャラクターはいません。";
 }
 
 function showMonthBirthday() {
-  const now = new Date();
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-
-  const area = document.getElementById("monthBirthdayArea");
+  const mm = String(new Date().getMonth() + 1).padStart(2, "0");
   const list = birthdayMap[mm] || [];
 
-  area.innerHTML = list.length
-    ? list.map(p => `・${p.name}（${p.kana}） …… ${mm}/${p.day}<br>`).join("")
-    : "今月誕生日のキャラクターはいません。";
+  const text = buildBirthdayText(
+    list.map(p => ({ ...p, kana: `${mm}/${p.day}` })),
+    "birthdayMonth"
+  );
+
+  document.getElementById("monthBirthdayArea").innerText =
+    text || "今月誕生日のキャラクターはいません。";
 }
 
 // =====================================================
@@ -310,5 +310,18 @@ function buildAnnounceTextFromResult(result) {
       POST_FROM: tweetConfig.times.postFrom,
       POST_TO: tweetConfig.times.postTo
     }
+  );
+}
+
+function buildBirthdayText(list, templateKey) {
+  if (!list.length) return "";
+
+  const body = list
+    .map(p => `・${p.name}（${p.kana}）`)
+    .join("\n");
+
+  return buildTextFromTemplate(
+    tweetConfig.templates[templateKey],
+    { BIRTHDAYS: body }
   );
 }
