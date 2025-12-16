@@ -27,13 +27,18 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("announceTweetBtn").addEventListener("click", tweetAnnounce);
   
   // JSON 読み込み完了後に表示
-  loadAllJSONs().then(() => {
+  loadAllJSONs()
+  .then(() => {
     showBirthday();
     showMonthBirthday();
     updateHistory();
     updateAllButtonStates();
     updateTweetCounter("");
     TWEET_HASHTAG = tweetConfig.hashtag || "";
+  })
+  .catch(err => {
+    console.error("JSON load error", err);
+    alert("データの読み込みに失敗しました。");
   });
 });
 
