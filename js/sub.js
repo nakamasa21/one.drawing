@@ -1,5 +1,5 @@
 // =====================================================
-// sub.js  UI / 表示 / コピー / ツイート（最終安定版）
+// sub.js  UI / 表示 / コピー / ツイート
 // =====================================================
 
 let TWEET_HASHTAG = "";
@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
     updateHistory();
     updateAllButtonStates();
     updateTweetCounter("");
-    TWEET_HASHTAG = tweetConfig.hashtag;
+    TWEET_HASHTAG = tweetConfig.hashtag || "";
   });
 });
 
