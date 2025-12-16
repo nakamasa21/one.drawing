@@ -26,6 +26,8 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("announceCopyBtn").addEventListener("click", copyAnnounce);
   document.getElementById("announceTweetBtn").addEventListener("click", tweetAnnounce);
   
+  document.getElementById("redoBtn").addEventListener("click", redoToday);
+  
   // JSON 読み込み完了後に表示
   loadAllJSONs()
   .then(() => {
@@ -35,6 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
     updateAllButtonStates();
     updateTweetCounter("");
     TWEET_HASHTAG = tweetConfig.hashtag || "";
+    restoreTodayResult();
   })
   .catch(err => {
     console.error("JSON load error", err);
@@ -59,7 +62,7 @@ async function drawTopicUI() {
   const today = new Date();
   const todayStr =
     `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
-
+  // 履歴保存
   result.normal.forEach(t => {
     usedTopics.push({
       title: t.title,
@@ -68,7 +71,15 @@ async function drawTopicUI() {
       date: todayStr
     });
   });
-
+  // 当日履歴保存
+  const TODAY_KEY = "todayDrawResult";
+  localStorage.setItem(
+    TODAY_KEY,JSON.stringify({
+      date: todayStr,
+      result: lastDrawResult
+    })
+  );
+  
   localStorage.setItem("usedTopics", JSON.stringify(usedTopics));
 
   updateHistory();
@@ -123,7 +134,32 @@ function resetHistoryUI() {
   updateAllButtonStates();
   updateTweetCounter("");
 }
+// =====================================================
+// 当日履歴再表示
+// =====================================================
+function restoreTodayResult() {
+  const saved = localStorage.getItem(TODAY_KEY);
+  if (!saved) return;
 
+  const data = JSON.parse(saved);
+
+  const today = new Date();
+  const todayStr =
+    `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
+
+  if (data.date !== todayStr) return;
+
+  lastDrawResult = data.result;
+
+  document.getElementById("topicArea").innerHTML =
+    buildTopicAreaTextFromResult(lastDrawResult);
+
+  document.getElementById("announceArea").innerText =
+    buildAnnounceTextFromResult(lastDrawResult);
+
+  updateAllButtonStates();
+  updateTweetCounter(document.getElementById("topicArea").innerText);
+}
 // =====================================================
 // 誕生日表示
 // =====================================================
@@ -323,4 +359,26 @@ function buildBirthdayText(list, templateKey) {
     tweetConfig.templates[templateKey],
     { BIRTHDAYS: body }
   );
+}
+// =====================================================
+// やりなおし
+// =====================================================
+function redoToday() {
+  const today = new Date();
+  const todayStr =
+    `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
+
+  // 当日の通常お題を履歴から削除
+  usedTopics = usedTopics.filter(t => t.date !== todayStr);
+
+  localStorage.setItem("usedTopics", JSON.stringify(usedTopics));
+
+  // 当日の抽選結果を削除
+  localStorage.removeItem("todayDrawResult");
+  lastDrawResult = null;
+
+  updateHistory();
+
+  // 再抽選
+  drawTopicUI();
 }
