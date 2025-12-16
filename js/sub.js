@@ -38,8 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
   })
   .catch(err => {
     console.error("JSON load error", err);
-    alert("データの読み込みに失敗しました。");
-    alert(err);
+    alert("データの読み込みに失敗しました。" + err);
   });
 });
 
@@ -133,7 +132,7 @@ function showBirthday() {
   const mm = String(now.getMonth() + 1).padStart(2, "0");
   const dd = String(now.getDate()).padStart(2, "0");
 
-  const list = birthdayMap[mm]?.filter(p => p.day === dd) || [];
+  let list = birthdayMap[mm]?.filter(p => p.day === dd) || [];
   const text = buildBirthdayText(list, "birthdayToday");
 
   document.getElementById("birthdayArea").innerText =
@@ -142,7 +141,7 @@ function showBirthday() {
 
 function showMonthBirthday() {
   const mm = String(new Date().getMonth() + 1).padStart(2, "0");
-  const list = birthdayMap[mm] || [];
+  let list = birthdayMap[mm] || [];
 
   const text = buildBirthdayText(
     list.map(p => ({ ...p, kana: `${mm}/${p.day}` })),
