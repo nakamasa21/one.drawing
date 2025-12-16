@@ -50,7 +50,7 @@ async function drawTopicUI() {
   const result = lastDrawResult;
   const topicAreaText = buildTopicAreaTextFromResult(lastDrawResult);
   if(topicAreaText == "") {
-    alert("お題の抽出に失敗しました。")
+    alert("お題の抽出に失敗しました。");
     return;
   }
 
