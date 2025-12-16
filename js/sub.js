@@ -156,40 +156,32 @@ function showMonthBirthday() {
 // =====================================================
 // コピー
 // =====================================================
-async function copyTopic() {
-  const text = document.getElementById("topicArea").innerText.trim();
+async function copyFromArea(areaId, btnId) {
+  const el = document.getElementById(areaId);
+  if (!el) return;
+
+  const text = el.innerText.trim();
   if (!text) return;
+
   await navigator.clipboard.writeText(text);
-  flashActionDone("copyBtn", "Copied");
+  flashActionDone(btnId, "Copied");
+}
+function copyTopic() {
+  copyFromArea("topicArea", "copyBtn");
 }
 
 function copyTodayBirthday() {
-  const text = document.getElementById("birthdayArea").innerText.trim();
-  if (!text) return;
-  navigator.clipboard.writeText(text);
-  flashActionDone("birthdayCopyBtn", "Copied");
+  copyFromArea("birthdayArea", "birthdayCopyBtn");
 }
 
 function copyMonthBirthday() {
-  const text = document.getElementById("monthBirthdayArea").innerText.trim();
-  if (!text) return;
-  navigator.clipboard.writeText(text);
-  flashActionDone("monthBirthdayCopyBtn", "Copied");
+  copyFromArea("monthBirthdayArea", "monthBirthdayCopyBtn");
 }
 
 function copyAnnounce() {
-  const text = document.getElementById("announceArea").innerText.trim();
-  if (!text) return;
-  navigator.clipboard.writeText(text);
-  flashActionDone("announceCopyBtn", "Copied");
+  copyFromArea("announceArea", "announceCopyBtn");
 }
 
-function tweetAnnounce() {
-  startTweet(
-    document.getElementById("announceArea").innerText,
-    "announceTweetBtn"
-  );
-}
 // =====================================================
 // ツイート
 // =====================================================
@@ -220,6 +212,10 @@ function tweetTodayBirthday() {
 
 function tweetMonthBirthday() {
   startTweet(document.getElementById("monthBirthdayArea").innerText, "monthBirthdayTweetBtn");
+}
+
+function tweetAnnounce() {
+  startTweet(document.getElementById("announceArea").innerText, "announceTweetBtn");
 }
 
 // =====================================================
