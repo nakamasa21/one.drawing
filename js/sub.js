@@ -4,6 +4,7 @@
 
 let TWEET_HASHTAG = "";
 let lastDrawResult = null;
+let TODAY_KEY = "todayDrawResult";
 
 
 // -----------------------------
@@ -72,7 +73,6 @@ async function drawTopicUI() {
     });
   });
   // 当日履歴保存
-  const TODAY_KEY = "todayDrawResult";
   localStorage.setItem(
     TODAY_KEY,JSON.stringify({
       date: todayStr,
