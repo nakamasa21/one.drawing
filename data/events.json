@@ -1,6 +1,7 @@
 {
   "standard": [
     { "year": "", "month": "01", "day": "01", "title": "元日", "level": "common" },
+    { "year": "", "month": "01", "day": "02", "title": "初夢", "level": "limited" },
     { "year": "2026", "month": "01", "day": "12", "title": "成人の日", "level": "common" },
 
     { "year": "", "month": "02", "day": "11", "title": "建国記念の日", "level": "common" },
