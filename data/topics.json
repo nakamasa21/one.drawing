@@ -3,8 +3,14 @@
     "seasonal": [
       { "id": "s001", "title": "春", "level": "common", "months": ["03", "04", "05"] },
       { "id": "s002", "title": "夏", "level": "common", "months": ["06", "07", "08"] },
-      { "id": "s003", "title": "秋", "level": "common", "months": ["09", "10", "11"] } ,
-      { "id": "s004", "title": "冬", "level": "common", "months": ["12", "01", "02"] }
+      { "id": "s003", "title": "秋", "level": "common", "months": ["09", "10", "11"] },
+      { "id": "s004", "title": "冬", "level": "common", "months": ["12", "01", "02"] },
+    
+      { "id": "s005", "title": "こたつ", "level": "common", "months": ["01"] },
+      { "id": "s006", "title": "みかん", "level": "common", "months": ["01"] },
+    
+      { "id": "s007", "title": "おせち料理", "level": "uncommon", "months": ["01"] },
+      { "id": "s008", "title": "年賀状", "level": "uncommon", "months": ["01"] }
     ],
 
     "character": [
