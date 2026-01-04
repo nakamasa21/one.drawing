@@ -7,14 +7,147 @@
       { "id": "s004", "title": "冬", "level": "common", "months": ["12", "01", "02"] },
       { "id": "s005", "title": "こたつ", "level": "common", "months": ["01"] },
       { "id": "s006", "title": "みかん", "level": "common", "months": ["01"] },
-      { "id": "s008", "title": "年賀状", "level": "uncommon", "months": ["01"] }
+      { "id": "s008", "title": "年賀状", "level": "uncommon", "months": ["01"] },
+
+      { "id": "s009", "title": "袴", "level": "common", "months": ["01"] },
+      { "id": "s010", "title": "雪", "level": "common", "months": ["12", "01", "02"] },
+      { "id": "s011", "title": "マフラー", "level": "common", "months": ["12", "01", "02"] },
+
+      { "id": "s012", "title": "いちご", "level": "common", "months": ["01", "02", "03", "04", "05"] },
+      { "id": "s013", "title": "りんご", "level": "common", "months": ["10", "11", "12"] },
+      { "id": "s014", "title": "レモン", "level": "common", "months": ["12", "01", "02", "03"] },
+      { "id": "s015", "title": "さくらんぼ", "level": "common", "months": ["06"] },
+      { "id": "s016", "title": "すいか", "level": "common", "months": ["07", "08"] },
+      { "id": "s017", "title": "ぶどう(グレープ/マスカット)", "level": "common", "months": ["08", "09", "10"] },
+      { "id": "s018", "title": "桃", "level": "common", "months": ["07", "08"] },
+      { "id": "s019", "title": "梨", "level": "common", "months": ["08", "09", "10"] },
+      { "id": "s020", "title": "柿", "level": "uncommon", "months": ["10", "11"] },
+      { "id": "s021", "title": "栗", "level": "uncommon", "months": ["09", "10"] }
     ],
 
     "character": [
       { "id": "c001", "title": "監督", "level": "uncommon" },
-      { "id": "c002", "title": "マネージャー", "level": "limited" }
+      { "id": "c002", "title": "マネージャー", "level": "limited" },
+
+      { "id": "c003", "title": "赤色の瞳", "level": "limited" },
+      { "id": "c004", "title": "青色の瞳", "level": "limited" },
+      { "id": "c005", "title": "緑色の瞳", "level": "limited" },
+      { "id": "c006", "title": "紫色の瞳", "level": "limited" },
+      { "id": "c007", "title": "黒色の瞳", "level": "limited" },
+      { "id": "c008", "title": "茶色の瞳", "level": "limited" },
+      { "id": "c009", "title": "黄色/金色の瞳", "level": "limited" },
+      { "id": "c010", "title": "灰色/銀色の瞳", "level": "limited" },
+      { "id": "c011", "title": "オッドアイ", "level": "limited" },
+
+      { "id": "c012", "title": "赤色の髪", "level": "limited" },
+      { "id": "c013", "title": "黒色の髪", "level": "limited" },
+      { "id": "c014", "title": "茶色の髪", "level": "limited" },
+      { "id": "c015", "title": "黄色/金色の髪", "level": "limited" },
+      { "id": "c016", "title": "灰色/銀色の髪", "level": "limited" },
+      { "id": "c017", "title": "青色の髪", "level": "limited" },
+      { "id": "c018", "title": "緑色の髪", "level": "limited" },
+      { "id": "c019", "title": "紫色の髪", "level": "limited" },
+      { "id": "c020", "title": "白色の髪", "level": "limited" },
+
+      { "id": "c021", "title": "名前が「あ」から始まるキャラ", "level": "limited" },
+      { "id": "c022", "title": "名前が「い」から始まるキャラ", "level": "limited" },
+      { "id": "c023", "title": "名前が「う」から始まるキャラ", "level": "limited" },
+      { "id": "c024", "title": "名前が「え」から始まるキャラ", "level": "limited" },
+      { "id": "c025", "title": "名前が「お」から始まるキャラ", "level": "limited" },
+
+      { "id": "c026", "title": "名前が「か・が」から始まるキャラ", "level": "limited" },
+      { "id": "c027", "title": "名前が「き・ぎ」から始まるキャラ", "level": "limited" },
+      { "id": "c028", "title": "名前が「く・ぐ」から始まるキャラ", "level": "limited" },
+      { "id": "c029", "title": "名前が「け・げ」から始まるキャラ", "level": "limited" },
+      { "id": "c030", "title": "名前が「こ・ご」から始まるキャラ", "level": "limited" },
+
+      { "id": "c031", "title": "名前が「さ・ざ」から始まるキャラ", "level": "limited" },
+      { "id": "c032", "title": "名前が「し・じ」から始まるキャラ", "level": "limited" },
+      { "id": "c033", "title": "名前が「す・ず」から始まるキャラ", "level": "limited" },
+      { "id": "c034", "title": "名前が「せ・ぜ」から始まるキャラ", "level": "limited" },
+      { "id": "c035", "title": "名前が「そ・ぞ」から始まるキャラ", "level": "limited" },
+
+      { "id": "c036", "title": "名前が「た・だ」から始まるキャラ", "level": "limited" },
+      { "id": "c037", "title": "名前が「ち・ぢ」から始まるキャラ", "level": "limited" },
+      { "id": "c038", "title": "名前が「つ・づ」から始まるキャラ", "level": "limited" },
+      { "id": "c039", "title": "名前が「て・で」から始まるキャラ", "level": "limited" },
+      { "id": "c040", "title": "名前が「と・ど」から始まるキャラ", "level": "limited" },
+
+      { "id": "c041", "title": "名前が「な」から始まるキャラ", "level": "limited" },
+      { "id": "c042", "title": "名前が「に」から始まるキャラ", "level": "limited" },
+      { "id": "c043", "title": "名前が「ぬ」から始まるキャラ", "level": "limited" },
+      { "id": "c044", "title": "名前が「ね」から始まるキャラ", "level": "limited" },
+      { "id": "c045", "title": "名前が「の」から始まるキャラ", "level": "limited" },
+
+      { "id": "c046", "title": "名前が「は・ば・ぱ」から始まるキャラ", "level": "limited" },
+      { "id": "c047", "title": "名前が「ひ・び・ぴ」から始まるキャラ", "level": "limited" },
+      { "id": "c064", "title": "名前が「ふ・ぶ・ぷ」から始まるキャラ", "level": "limited" },
+      { "id": "c049", "title": "名前が「へ・べ・ぺ」から始まるキャラ", "level": "limited" },
+      { "id": "c050", "title": "名前が「ほ・ぼ・ぽ」から始まるキャラ", "level": "limited" },
+
+      { "id": "c051", "title": "名前が「ま」から始まるキャラ", "level": "limited" },
+      { "id": "c052", "title": "名前が「み」から始まるキャラ", "level": "limited" },
+      { "id": "c053", "title": "名前が「む」から始まるキャラ", "level": "limited" },
+      { "id": "c054", "title": "名前が「め」から始まるキャラ", "level": "limited" },
+      { "id": "c055", "title": "名前が「も」から始まるキャラ", "level": "limited" },
+
+      { "id": "c056", "title": "名前が「や」から始まるキャラ", "level": "limited" },
+      { "id": "c057", "title": "名前が「ゆ」から始まるキャラ", "level": "limited" },
+      { "id": "c058", "title": "名前が「よ」から始まるキャラ", "level": "limited" },
+
+      { "id": "c059", "title": "名前が「ら」から始まるキャラ", "level": "limited" },
+      { "id": "c060", "title": "名前が「り」から始まるキャラ", "level": "limited" },
+      { "id": "c061", "title": "名前が「る」から始まるキャラ", "level": "limited" },
+      { "id": "c062", "title": "名前が「れ」から始まるキャラ", "level": "limited" },
+      { "id": "c063", "title": "名前が「ろ」から始まるキャラ", "level": "limited" },
+
+      { "id": "c065", "title": "名前が「わ」から始まるキャラ", "level": "limited" }
     ],
-    
+
+    "normal": [
+      { "id": "n001", "title": "青空", "level": "common" },
+      { "id": "n002", "title": "曇空", "level": "common" },
+      { "id": "n003", "title": "星空", "level": "common" },
+      { "id": "n004", "title": "雨空", "level": "common" },
+
+      { "id": "n005", "title": "朝", "level": "common" },
+      { "id": "n006", "title": "黄昏", "level": "common" },
+      { "id": "n007", "title": "夜", "level": "common" },
+
+      { "id": "n008", "title": "海", "level": "common" },
+      { "id": "n009", "title": "大地", "level": "common" },
+      { "id": "n010", "title": "月", "level": "common" },
+      { "id": "n011", "title": "太陽", "level": "common" },
+
+      { "id": "n012", "title": "喜怒哀楽", "level": "common" },
+      { "id": "n013", "title": "喜び", "level": "common" },
+      { "id": "n014", "title": "悲しみ", "level": "common" },
+      { "id": "n015", "title": "怒り", "level": "common" },
+      { "id": "n016", "title": "涙", "level": "common" },
+      { "id": "n017", "title": "笑顔", "level": "common" },
+
+      { "id": "n018", "title": "ケーキ", "level": "common" },
+      { "id": "n019", "title": "パフェ", "level": "common" },
+      { "id": "n020", "title": "コーヒー", "level": "common" },
+      { "id": "n021", "title": "紅茶", "level": "common" },
+      { "id": "n022", "title": "おにぎり", "level": "common" },
+      { "id": "n023", "title": "おでん", "level": "common" },
+
+      { "id": "n024", "title": "眼鏡", "level": "common" },
+      { "id": "n025", "title": "ヘッドフォン", "level": "common" },
+      { "id": "n026", "title": "ネックレス", "level": "common" },
+      { "id": "n027", "title": "ミサンガ", "level": "common" },
+      { "id": "n028", "title": "指輪", "level": "common" },
+      { "id": "n029", "title": "ピアス", "level": "common" },
+      { "id": "n030", "title": "イヤリング", "level": "common" },
+      { "id": "n031", "title": "ブレスレット", "level": "common" },
+      { "id": "n032", "title": "腕時計", "level": "common" },
+      { "id": "n033", "title": "帽子", "level": "common" },
+      { "id": "n034", "title": "手袋", "level": "common" },
+      { "id": "n035", "title": "リボン", "level": "common" },
+      { "id": "n036", "title": "ネクタイ", "level": "common" }
+    ],
+
     "team": [
       { "id": "t001", "title": "雷門中", "level": "limited" },
       { "id": "t002", "title": "帝国学園", "level": "limited" },
