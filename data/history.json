@@ -1,0 +1,12 @@
+{
+  "history": [
+    {"id":"s008","title":"年賀状","category":"seasonal","level":"uncommon","date":"2026-01-02"},
+    {"id":"c048","title":"ダークエンジェル","category":"team","level":"limited","date":"2026-01-03"},
+    {"id":"s005","title":"こたつ","category":"seasonal","level":"common","date":"2026-01-03"},
+    {"id":"t019","title":"ザ・ジェネシス","category":"team","level":"limited","date":"2026-01-04"},
+    {"id":"s006","title":"みかん","category":"seasonal","level":"common","date":"2026-01-04"},
+    {"id":"c001","title":"監督","category":"character","level":"uncommon","date":"2026-01-05"},
+    {"id":"s007","title":"おせち料理","category":"seasonal","level":"uncommon","date":"2026-01-05"},
+    {"id":"s004","title":"冬","category":"seasonal","level":"common","date":"2026-01-06"}
+  ]
+}
