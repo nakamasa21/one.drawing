@@ -207,8 +207,12 @@ async function copyFromArea(areaId, btnId) {
   const el = document.getElementById(areaId);
   if (!el) return;
 
-  const text = el.innerText.trim();
+  let text = el.innerText.trim();
   if (!text) return;
+
+  if (TWEET_HASHTAG && !text.includes(TWEET_HASHTAG)) {
+    text += "\n" + TWEET_HASHTAG;
+  }
 
   await navigator.clipboard.writeText(text);
   flashActionDone(btnId, "Copied");
