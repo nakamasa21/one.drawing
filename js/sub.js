@@ -5,7 +5,7 @@
 let TWEET_HASHTAG = "";
 let lastDrawResult = null;
 let TODAY_KEY = "todayDrawResult";
-
+let historyData = { history: [] };
 
 // -----------------------------
 // 初期イベント設定
@@ -31,7 +31,10 @@ window.addEventListener("DOMContentLoaded", () => {
   
   // JSON 読み込み完了後に表示
   loadAllJSONs()
-  .then(() => {
+  .then(async () => {
+    await loadHistoryJSON();
+    applyUsedTopics();
+
     showBirthday();
     showMonthBirthday();
     updateHistory();
@@ -71,7 +74,16 @@ async function drawTopicUI() {
       level: t.level,
       date: todayStr
     });
+    historyData.history.push({
+      id:t.id,
+      title: t.title,
+      category: t.category,
+      level: t.level,
+      date: todayStr
+    });
   });
+  applyUsedTopics();
+  
   // 当日履歴保存
   localStorage.setItem(
     TODAY_KEY,JSON.stringify({
@@ -381,4 +393,70 @@ function redoToday() {
 
   // 再抽選
   drawTopicUI();
+}
+
+// =====================================================
+// history 管理
+// =====================================================
+async function loadHistoryJSON() {
+  try {
+    const res = await fetch("./history.json");
+    historyData = await res.json();
+  } catch {
+    historyData = { history: [] };
+  }
+}
+
+function loadLocalHistory() {
+  try {
+    return JSON.parse(localStorage.getItem("usedTopics") || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function mergeHistories(jsonHistory, localHistory) {
+  const map = new Map();
+
+  jsonHistory.forEach(h => {
+    map.set(h.title, h);
+  });
+
+  localHistory.forEach(h => {
+    if (!map.has(h.title)) {
+      map.set(h.title, {
+        title: h.title,
+        category: h.category,
+        level: h.level,
+        date: h.date
+      });
+    }
+  });
+
+  return Array.from(map.values());
+}
+
+function applyUsedTopics() {
+  const merged = mergeHistories(
+    historyData.history,
+    loadLocalHistory()
+  );
+
+  historyData.history = merged;
+
+  // main.js 側へ注入
+  setUsedTopics(merged);
+}
+// hstory.jsonエクスポート用
+function exportHistoryJSON() {
+  const blob = new Blob(
+    [JSON.stringify({ history: historyData.history }, null, 2)],
+    { type: "application/json" }
+  );
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "history.json";
+  a.click();
+  URL.revokeObjectURL(url);
 }
