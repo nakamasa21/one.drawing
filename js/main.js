@@ -161,3 +161,9 @@ async function drawAllTopics() {
 
   return { birthdays, events, normal };
 }
+// =====================================================
+// ★ 外部から使用済みお題を注入するためのAPI
+// =====================================================
+function setUsedTopics(list) {
+  usedTopics = Array.isArray(list) ? list : [];
+}
