@@ -7,6 +7,11 @@
     {"id":"s006","title":"みかん","category":"seasonal","level":"common","date":"2026-01-04"},
     {"id":"c001","title":"監督","category":"character","level":"uncommon","date":"2026-01-05"},
     {"id":"s007","title":"おせち料理","category":"seasonal","level":"uncommon","date":"2026-01-05"},
-    {"id":"s004","title":"冬","category":"seasonal","level":"common","date":"2026-01-06"}
+    {"id":"s004","title":"冬","category":"seasonal","level":"common","date":"2026-01-06"},
+    {"id":"n035","title":"リボン","category":"normal","level":"common","date":"2026-01-06"},
+    {"id":"c046","title":"名前が「は・ば・ぱ」から始まるキャラ","category":"character","level":"limited","date":"2026-01-07"},
+    {"id":"s014","title":"レモン","category":"seasonal","level":"common","date":"2026-01-07"},
+    {"id":"n010","title":"月","category":"normal","level":"common","date":"2026-01-08"},
+    {"id":"c003","title":"赤色の瞳","category":"character","level":"limited","date":"2026-01-08"}
   ]
 }
