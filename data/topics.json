@@ -101,9 +101,17 @@
       { "id": "c062", "title": "名前が「れ」から始まるキャラ", "level": "limited" },
       { "id": "c063", "title": "名前が「ろ」から始まるキャラ", "level": "limited" },
 
-      { "id": "c065", "title": "名前が「わ」から始まるキャラ", "level": "limited" }
+      { "id": "c065", "title": "名前が「わ」から始まるキャラ", "level": "limited" },
+      
+      { "id": "c066", "title": "弟", "level": "limited" },
+      { "id": "c067", "title": "お兄ちゃん", "level": "limited" },
+      { "id": "c068", "title": "ラスボス", "level": "common" },
+      { "id": "c069", "title": "陸上部", "level": "common" },
+      { "id": "c070", "title": "セレクトキャラ", "level": "limited" },
+      { "id": "c071", "title": "赤のユニフォーム", "level": "limited" },
+      { "id": "c072", "title": "青のユニフォーム", "level": "limited" },
+      { "id": "c073", "title": "緑のユニフォーム", "level": "limited" }
     ],
-
     "normal": [
       { "id": "n001", "title": "青空", "level": "common" },
       { "id": "n002", "title": "曇空", "level": "common" },
@@ -145,7 +153,14 @@
       { "id": "n033", "title": "帽子", "level": "common" },
       { "id": "n034", "title": "手袋", "level": "common" },
       { "id": "n035", "title": "リボン", "level": "common" },
-      { "id": "n036", "title": "ネクタイ", "level": "common" }
+      { "id": "n036", "title": "ネクタイ", "level": "common" },
+      
+      { "id": "n037", "title": "マリンスタイル", "level": "limited" },
+      { "id": "n038", "title": "海賊", "level": "common" },
+      { "id": "n039", "title": "ラーメン", "level": "common" },
+      { "id": "n040", "title": "髪下ろし", "level": "common" },
+      { "id": "n041", "title": "私服", "level": "common" },
+      { "id": "n042", "title": "ゲームセンター", "level": "common" }
     ],
 
     "team": [
