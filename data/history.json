@@ -1,17 +1,94 @@
 {
   "history": [
-    {"id":"s008","title":"年賀状","category":"seasonal","level":"uncommon","date":"2026-01-02"},
-    {"id":"c048","title":"ダークエンジェル","category":"team","level":"limited","date":"2026-01-03"},
-    {"id":"s005","title":"こたつ","category":"seasonal","level":"common","date":"2026-01-03"},
-    {"id":"t019","title":"ザ・ジェネシス","category":"team","level":"limited","date":"2026-01-04"},
-    {"id":"s006","title":"みかん","category":"seasonal","level":"common","date":"2026-01-04"},
-    {"id":"c001","title":"監督","category":"character","level":"uncommon","date":"2026-01-05"},
-    {"id":"s007","title":"おせち料理","category":"seasonal","level":"uncommon","date":"2026-01-05"},
-    {"id":"s004","title":"冬","category":"seasonal","level":"common","date":"2026-01-06"},
-    {"id":"n035","title":"リボン","category":"normal","level":"common","date":"2026-01-06"},
-    {"id":"c046","title":"名前が「は・ば・ぱ」から始まるキャラ","category":"character","level":"limited","date":"2026-01-07"},
-    {"id":"s014","title":"レモン","category":"seasonal","level":"common","date":"2026-01-07"},
-    {"id":"n010","title":"月","category":"normal","level":"common","date":"2026-01-08"},
-    {"id":"c003","title":"赤色の瞳","category":"character","level":"limited","date":"2026-01-08"}
+    {"id":"s008", "date":"2026-01-02", "level":"uncommon", "category":"seasonal", "title":"年賀状"}
+  , {"id":"t048", "date":"2026-01-03", "level":"limited", "category":"team", "title":"ダークエンジェル"}
+  , {"id":"s005", "date":"2026-01-03", "level":"common", "category":"seasonal", "title":"こたつ"}
+  , {"id":"t019", "date":"2026-01-04", "level":"limited", "category":"team", "title":"ザ・ジェネシス"}
+  , {"id":"s006", "date":"2026-01-04", "level":"common", "category":"seasonal", "title":"みかん"}
+  , {"id":"c001", "date":"2026-01-05", "level":"uncommon", "category":"character", "title":"監督"}
+  , {"id":"s007", "date":"2026-01-05", "level":"uncommon", "category":"seasonal", "title":"おせち料理"}
+  , {"id":"s004", "date":"2026-01-06", "level":"common", "category":"seasonal", "title":"冬"}
+  , {"id":"n035", "date":"2026-01-06", "level":"common", "category":"normal", "title":"リボン"}
+  , {"id":"c046", "date":"2026-01-07", "level":"limited", "category":"character", "title":"名前が「は・ば・ぱ」から始まるキャラ"}
+  , {"id":"s014", "date":"2026-01-07", "level":"common", "category":"seasonal", "title":"レモン"}
+  , {"id":"n010", "date":"2026-01-08", "level":"common", "category":"normal", "title":"月"}
+  , {"id":"c003", "date":"2026-01-08", "level":"limited", "category":"character", "title":"赤色の瞳"}
+  , {"id":"t013", "date":"2026-01-09", "level":"limited", "category":"team", "title":"傘美野中"}
+  , {"id":"n036", "date":"2026-01-09", "level":"common", "category":"normal", "title":"ネクタイ"}
+  , {"id":"t016", "date":"2026-01-10", "level":"limited", "category":"team", "title":"イプシロン"}
+  , {"id":"n032", "date":"2026-01-10", "level":"common", "category":"normal", "title":"腕時計"}
+  , {"id":"c060", "date":"2026-01-11", "level":"limited", "category":"character", "title":"名前が「り」から始まるキャラ"}
+  , {"id":"n025", "date":"2026-01-11", "level":"common", "category":"normal", "title":"ヘッドフォン"}
+  , {"id":"c011", "date":"2026-01-12", "level":"limited", "category":"character", "title":"オッドアイ"}
+  , {"id":"n034", "date":"2026-01-13", "level":"common", "category":"normal", "title":"手袋"}
+  , {"id":"c049", "date":"2026-01-13", "level":"limited", "category":"character", "title":"名前が「へ・べ・ぺ」から始まるキャラ"}
+  , {"id":"s009", "date":"2026-01-14", "level":"common", "category":"seasonal", "title":"袴"}
+  , {"id":"c047", "date":"2026-01-15", "level":"limited", "category":"character", "title":"名前が「ひ・び・ぴ」から始まるキャラ"}
+  , {"id":"n021", "date":"2026-01-15", "level":"common", "category":"normal", "title":"紅茶"}
+  , {"id":"c008", "date":"2026-01-16", "level":"limited", "category":"character", "title":"茶色の瞳"}
+  , {"id":"n014", "date":"2026-01-16", "level":"common", "category":"normal", "title":"悲しみ"}
+  , {"id":"t018", "date":"2026-01-17", "level":"limited", "category":"team", "title":"ダイヤモンドダスト"}
+  , {"id":"n033", "date":"2026-01-17", "level":"common", "category":"normal", "title":"帽子"}
+  , {"id":"c028", "date":"2026-01-18", "level":"limited", "category":"character", "title":"名前が「く・ぐ」から始まるキャラ"}
+  , {"id":"c014", "date":"2026-01-18", "level":"limited", "category":"character", "title":"茶色の髪"}
+  , {"id":"s011", "date":"2026-01-18", "level":"common", "category":"seasonal", "title":"マフラー"}
+  , {"id":"n002", "date":"2026-01-19", "level":"common", "category":"normal", "title":"曇空"}
+  , {"id":"t030", "date":"2026-01-20", "level":"limited", "category":"team", "title":"イナズマジャパン"}
+  , {"id":"n029", "date":"2026-01-20", "level":"common", "category":"normal", "title":"ピアス"}
+  , {"id":"n007", "date":"2026-01-21", "level":"common", "category":"normal", "title":"夜"}
+  , {"id":"n024", "date":"2026-01-22", "level":"common", "category":"normal", "title":"眼鏡"}
+  , {"id":"t012", "date":"2026-01-23", "level":"limited", "category":"team", "title":"雷門ＯＢ"}
+  , {"id":"n026", "date":"2026-01-24", "level":"common", "category":"normal", "title":"ネックレス"}
+  , {"id":"c041", "date":"2026-01-24", "level":"limited", "category":"character", "title":"名前が「な」から始まるキャラ"}
+  , {"id":"t034", "date":"2026-01-25", "level":"limited", "category":"team", "title":"ファイアードラゴン"}
+  , {"id":"s004", "date":"2026-01-25", "level":"common", "category":"seasonal", "title":"冬"}
+  , {"id":"n008", "date":"2026-01-26", "level":"common", "category":"normal", "title":"海"}
+  , {"id":"t032", "date":"2026-01-26", "level":"limited", "category":"team", "title":"デザートライオン"}
+  , {"id":"t008", "date":"2026-01-27", "level":"limited", "category":"team", "title":"千羽山中"}
+  , {"id":"n006", "date":"2026-01-27", "level":"common", "category":"normal", "title":"黄昏"}
+  , {"id":"n019", "date":"2026-01-28", "level":"common", "category":"normal", "title":"パフェ"}
+  , {"id":"t040", "date":"2026-01-28", "level":"limited", "category":"team", "title":"ザ・キングダム"}
+  , {"id":"c032", "date":"2026-01-29", "level":"limited", "category":"character", "title":"名前が「し・じ」から始まるキャラ"}
+  , {"id":"n017", "date":"2026-01-29", "level":"common", "category":"normal", "title":"笑顔"}
+  , {"id":"c062", "date":"2026-01-30", "level":"limited", "category":"character", "title":"名前が「れ」から始まるキャラ"}
+  , {"id":"s012", "date":"2026-01-30", "level":"common", "category":"seasonal", "title":"いちご"}
+  , {"id":"c036", "date":"2026-01-31", "level":"limited", "category":"character", "title":"名前が「た・だ」から始まるキャラ"}
+  , {"id":"n022", "date":"2026-01-31", "level":"common", "category":"normal", "title":"おにぎり"}
+  , {"id":"n012", "date":"2026-02-01", "level":"common", "category":"normal", "title":"喜怒哀楽"}
+  , {"id":"c071", "date":"2026-02-03", "level":"limited", "category":"character", "title":"赤のユニフォーム"}
+  , {"id":"c015", "date":"2026-02-04", "level":"limited", "category":"character", "title":"黄色/金色の髪"}
+  , {"id":"n009", "date":"2026-02-04", "level":"common", "category":"normal", "title":"大地"}
+  , {"id":"c018", "date":"2026-02-05", "level":"limited", "category":"character", "title":"緑色の髪"}
+  , {"id":"n016", "date":"2026-02-05", "level":"common", "category":"normal", "title":"涙"}
+  , {"id":"n004", "date":"2026-02-06", "level":"common", "category":"normal", "title":"雨空"}
+  , {"id":"t014", "date":"2026-02-07", "level":"limited", "category":"team", "title":"一番街サリーズ"}
+  , {"id":"n003", "date":"2026-02-07", "level":"common", "category":"normal", "title":"星空"}
+  , {"id":"n023", "date":"2026-02-08", "level":"common", "category":"normal", "title":"おでん"}
+  , {"id":"c005", "date":"2026-02-09", "level":"limited", "category":"character", "title":"緑色の瞳"}
+  , {"id":"n018", "date":"2026-02-10", "level":"common", "category":"normal", "title":"ケーキ"}
+  , {"id":"n038", "date":"2026-02-11", "level":"common", "category":"normal", "title":"海賊"}
+  , {"id":"t015", "date":"2026-02-12", "level":"limited", "category":"team", "title":"ジェミニストーム"}
+  , {"id":"n031", "date":"2026-02-12", "level":"common", "category":"normal", "title":"ブレスレット"}
+  , {"id":"c066", "date":"2026-02-13", "level":"limited", "category":"character", "title":"緑のユニフォーム"}
+  , {"id":"c064", "date":"2026-02-15", "level":"limited", "category":"character", "title":"名前が「ふ・ぶ・ぷ」から始まるキャラ"}
+  , {"id":"n001", "date":"2026-02-15", "level":"common", "category":"normal", "title":"青空"}
+  , {"id":"t026", "date":"2026-02-16", "level":"limited", "category":"team", "title":"大海原中"}
+  , {"id":"n011", "date":"2026-02-16", "level":"common", "category":"normal", "title":"太陽"}
+  , {"id":"c024", "date":"2026-02-17", "level":"limited", "category":"character", "title":"名前が「え」から始まるキャラ"}
+  , {"id":"n028", "date":"2026-02-17", "level":"common", "category":"normal", "title":"指輪"}
+  , {"id":"t021", "date":"2026-02-18", "level":"limited", "category":"team", "title":"白恋中"}
+  , {"id":"n005", "date":"2026-02-18", "level":"common", "category":"normal", "title":"朝"}
+  , {"id":"c017", "date":"2026-02-19", "level":"limited", "category":"character", "title":"青色の髪"}
+  , {"id":"n027", "date":"2026-02-19", "level":"common", "category":"normal", "title":"ミサンガ"}
+  , {"id":"c009", "date":"2026-02-20", "level":"limited", "category":"character", "title":"黄色/金色の瞳"}
+  , {"id":"n039", "date":"2026-02-21", "level":"common", "category":"normal", "title":"ラーメン"}
+  , {"id":"c067", "date":"2026-02-21", "level":"limited", "category":"character", "title":"お兄ちゃん"}
+  , {"id":"n040", "date":"2026-02-23", "level":"common", "category":"normal", "title":"髪下ろし"}
+  , {"id":"c068", "date":"2026-02-24", "level":"common", "category":"character", "title":"ラスボス"}
+  , {"id":"n041", "date":"2026-02-24", "level":"common", "category":"normal", "title":"私服"}
+  , {"id":"c069", "date":"2026-02-25", "level":"common", "category":"character", "title":"陸上部"}
+  , {"id":"n042", "date":"2026-02-25", "level":"common", "category":"normal", "title":"ゲームセンター"}
+  , {"id":"c070", "date":"2026-02-25", "level":"common", "category":"character", "title":"マリンスタイル"}
+  , {"id":"n043", "date":"2026-02-25", "level":"limited", "category":"normal", "title":"セレクトキャラ"}
   ]
 }
