@@ -207,7 +207,7 @@ async function copyFromArea(areaId, btnId) {
   const el = document.getElementById(areaId);
   if (!el) return;
 
-  let text = el.innerText.trim();
+  let text = stripMetaForShare(el.innerText);
   if (!text) return;
 
   if (TWEET_HASHTAG && !text.includes(TWEET_HASHTAG)) {
@@ -217,6 +217,7 @@ async function copyFromArea(areaId, btnId) {
   await navigator.clipboard.writeText(text);
   flashActionDone(btnId, "Copied");
 }
+
 function copyTopic() {
   copyFromArea("topicArea", "copyBtn");
 }
@@ -233,6 +234,16 @@ function copyAnnounce() {
   copyFromArea("announceArea", "announceCopyBtn");
 }
 
+// システム管理者向け表記の除去
+function stripMetaForShare(text) {
+  return text
+    // （seasonal / common）などを除去
+    .replace(/（[^）]*\/[^）]*）/g, "")
+    // （seasonal）だけの形式も保険で除去
+    .replace(/（(seasonal|normal|team|character)）/g, "")
+    .replace(/\s+$/gm, "")
+    .trim();
+}
 // =====================================================
 // ツイート
 // =====================================================
@@ -254,7 +265,10 @@ function startTweet(text, btnId) {
 }
 
 function tweetTopic() {
-  startTweet(document.getElementById("topicArea").innerText, "tweetBtn");
+  startTweet(
+    stripMetaForShare(document.getElementById("topicArea").innerText),
+    "tweetBtn"
+  );
 }
 
 function tweetTodayBirthday() {
