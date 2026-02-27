@@ -8,21 +8,26 @@ let topics = [];
 let levelScores = {};
 let usedTopics = JSON.parse(localStorage.getItem("usedTopics") || "[]");
 let tweetConfig = {};
+let historyUsedIds = [];
 
 // -----------------------------
 // JSON 読込
 // -----------------------------
 async function loadAllJSONs() {
-  const [birthday, events, topicsData, levelJson, tweetJson] = await Promise.all([
+  const [birthday, events, topicsData, levelJson, tweetJson, historyJson] = await Promise.all([
     fetch("./data/birthday.json").then(r => r.json()),
     fetch("./data/events.json").then(r => r.json()),
     fetch("./data/topics.json").then(r => r.json()),
     fetch("./data/levels.json").then(r => r.json()),
-    fetch("./data/tweet.json").then(r => r.json())
+    fetch("./data/tweet.json").then(r => r.json()),
+    fetch("./data/history.json").then(r => r.json()).catch(() => ({ history: [] }))
   ]);
 
   birthdayMap = birthday.month;
   levelScores = levelJson.levels;
+
+  // history.json から使用済みIDを抽出
+  historyUsedIds = (historyJson.history || []).map(h => h.id);
 
   // events.json → 3カテゴリを結合
   eventsMap = [
@@ -31,17 +36,20 @@ async function loadAllJSONs() {
     ...events.inazumaEleven.map(e => ({ ...e, category: "inazumaEleven" }))
   ];
 
-  // topics.json → categories の中身を全部 flatten
+  // topics.json → categories を flatten
   topics = [];
   for (const cat in topicsData.categories) {
     topicsData.categories[cat].forEach(t => {
+      // ★ history.json に含まれるIDは除外
+      if (historyUsedIds.includes(t.id)) return;
+
       topics.push({
         ...t,
         category: cat
       });
     });
   }
-  
+
   tweetConfig = tweetJson;
 }
 
