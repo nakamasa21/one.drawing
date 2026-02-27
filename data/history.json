@@ -81,6 +81,7 @@
   , {"id":"c017", "date":"2026-02-19", "level":"limited", "category":"character", "title":"青色の髪"}
   , {"id":"n027", "date":"2026-02-19", "level":"common", "category":"normal", "title":"ミサンガ"}
   , {"id":"c009", "date":"2026-02-20", "level":"limited", "category":"character", "title":"黄色/金色の瞳"}
+  , {"id":"s003", "date":"2026-02-20", "level":"common", "category":"seasonal", "title":"雪"}
   , {"id":"n039", "date":"2026-02-21", "level":"common", "category":"normal", "title":"ラーメン"}
   , {"id":"c067", "date":"2026-02-21", "level":"limited", "category":"character", "title":"お兄ちゃん"}
   , {"id":"n040", "date":"2026-02-23", "level":"common", "category":"normal", "title":"髪下ろし"}
