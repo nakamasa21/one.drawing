@@ -22,7 +22,12 @@
       { "id": "s018", "title": "桃", "level": "common", "months": ["07", "08"] },
       { "id": "s019", "title": "梨", "level": "common", "months": ["08", "09", "10"] },
       { "id": "s020", "title": "柿", "level": "uncommon", "months": ["10", "11"] },
-      { "id": "s021", "title": "栗", "level": "uncommon", "months": ["09", "10"] }
+      { "id": "s021", "title": "栗", "level": "uncommon", "months": ["09", "10"] },
+      { "id": "s022", "title": "梅", "level": "common", "months": ["03"] },
+      { "id": "s023", "title": "桜", "level": "common", "months": ["04"] },
+      { "id": "s024", "title": "お祭り", "level": "common", "months": ["08"] },
+      { "id": "s025", "title": "甚平", "level": "common", "months": ["06","07","08"] },
+      { "id": "s026", "title": "浴衣", "level": "common", "months": ["07","08"] }
     ],
 
     "character": [
@@ -110,7 +115,13 @@
       { "id": "c070", "title": "セレクトキャラ", "level": "limited" },
       { "id": "c071", "title": "赤のユニフォーム", "level": "limited" },
       { "id": "c072", "title": "青のユニフォーム", "level": "limited" },
-      { "id": "c073", "title": "緑のユニフォーム", "level": "limited" }
+      { "id": "c073", "title": "緑のユニフォーム", "level": "limited" },
+      { "id": "c074", "title": "紫のユニフォーム", "level": "limited" },
+      { "id": "c075", "title": "黒のユニフォーム", "level": "limited" },
+      { "id": "c076", "title": "白のユニフォーム", "level": "limited" },
+      { "id": "c077", "title": "黄色のユニフォーム", "level": "limited" },
+      { "id": "c078", "title": "大人", "level": "uncommon" },
+      { "id": "c079", "title": "褐色肌", "level": "limited" }
     ],
     "normal": [
       { "id": "n001", "title": "青空", "level": "common" },
@@ -160,9 +171,25 @@
       { "id": "n039", "title": "ラーメン", "level": "common" },
       { "id": "n040", "title": "髪下ろし", "level": "common" },
       { "id": "n041", "title": "私服", "level": "common" },
-      { "id": "n042", "title": "ゲームセンター", "level": "common" }
+      { "id": "n042", "title": "ゲームセンター", "level": "common" },
+      { "id": "n043", "title": "最強といえば", "level": "uncommon" },
+      { "id": "n044", "title": "2人組", "level": "uncommon" },
+      { "id": "n045", "title": "ミキシマックス", "level": "uncommon" },
+      { "id": "n046", "title": "ライオン", "level": "limited" },
+      { "id": "n047", "title": "魚", "level": "limited" },
+      { "id": "n048", "title": "航海", "level": "uncommon" },
+      { "id": "n049", "title": "炎", "level": "common" },
+      { "id": "n050", "title": "嵐", "level": "uncommon" },
+      { "id": "n051", "title": "花", "level": "common" },
+      { "id": "n052", "title": "ヘアアレンジ", "level": "common" },
+      { "id": "n053", "title": "制服", "level": "common" },
+      { "id": "n054", "title": "ジャージ", "level": "common" },
+      { "id": "n055", "title": "厨二病", "level": "uncommon" },
+      { "id": "n056", "title": "ヨット", "level": "common" },
+      { "id": "n057", "title": "お茶会", "level": "common" },
+      { "id": "n058", "title": "リベンジ試合", "level": "uncommon" },
+      { "id": "n059", "title": "挑戦状", "level": "uncommon" }
     ],
-
     "team": [
       { "id": "t001", "title": "雷門中", "level": "limited" },
       { "id": "t002", "title": "帝国学園", "level": "limited" },
@@ -214,6 +241,12 @@
       { "id": "c048", "title": "ダークエンジェル", "level": "limited" },
       { "id": "t049", "title": "魔界軍団Ｚ", "level": "limited" },
       { "id": "t050", "title": "王牙学園", "level": "limited" }
+    ],
+    "wear": [
+      { "id": "w001", "title": "ジェネシスウェア", "level": "uncommon" },
+      { "id": "w002", "title": "ギルウェア", "level": "uncommon" },
+      { "id": "w003", "title": "ザンウェア", "level": "uncommon" },
+      { "id": "w004", "title": "純情ウェア", "level": "uncommon" }
     ]
   }
 }
