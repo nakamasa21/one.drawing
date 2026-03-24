@@ -121,7 +121,7 @@
       { "id": "c076", "title": "白のユニフォーム", "level": "limited" },
       { "id": "c077", "title": "黄色のユニフォーム", "level": "limited" },
       { "id": "c078", "title": "大人", "level": "uncommon" },
-      { "id": "c079", "title": "褐色肌", "level": "limited" }
+      { "id": "c079", "title": "褐色肌", "level": "uncommon" }
     ],
     "normal": [
       { "id": "n001", "title": "青空", "level": "common" },
