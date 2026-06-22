@@ -220,5 +220,49 @@
     {"date":"2026-04-29","level":"common","category":"normal","title":"MF（GO）"},
     {"id":"c026","date":"2026-04-30","level":"limited","category":"character","title":"名前が「か・が」から始まるキャラ"},
     {"date":"2026-04-30","level":"common","category":"normal","title":"DF（GO）"}
-  ]
+, {"date":"2026-05-01", "level":"common", "category":"normal", "title":"GK（GO）"}
+, {"id":"c074", "date":"2026-05-01", "level":"limited", "category":"character", "title":"紫のユニフォーム"}
+, {"id":"c045", "date":"2026-05-02", "level":"limited", "category":"character", "title":"名前が「の」から始まるキャラ"}
+, {"date":"2026-05-02", "level":"common", "category":"normal", "title":"FW（アレオリ）"}
+, {"date":"2026-05-03", "level":"unique", "category":"birthday", "title":"道場 敦教"}
+, {"date":"2026-05-03", "level":"common", "category":"normal", "title":"MF（アレオリ）"}
+, {"date":"2026-05-04", "level":"common", "category":"seasonal", "title":"みどり"}
+, {"date":"2026-05-04", "level":"common", "category":"normal", "title":"DF（アレオリ）"}
+, {"year":"2011", "date":"2026-05-04", "level":"common", "category":"inazumaEleven", "title":"イナズマイレブンGO 放送開始（15周年）"}
+, {"date":"2026-05-05", "level":"common", "category":"event", "title":"こどもの日"}
+, {"id":"c057", "date":"2026-05-05", "level":"limited", "category":"character", "title":"名前が「ゆ」から始まるキャラ"}
+, {"date":"2026-05-05", "level":"common", "category":"normal", "title":"GK（アレオリ）"}
+, {"id":"c012", "date":"2026-05-06", "level":"limited", "category":"character", "title":"赤色の髪"}
+, {"date":"2026-05-06", "level":"common", "category":"normal", "title":"FW（ヴィクロ）"}
+, {"id":"c021", "date":"2026-05-07", "level":"limited", "category":"character", "title":"名前が「あ」から始まるキャラ"}
+, {"date":"2026-05-07", "level":"common", "category":"normal", "title":"MF（ヴィクロ）"}
+, {"date":"2026-05-08", "level":"unique", "category":"birthday", "title":"佐久間 次郎"}
+, {"year":"2013", "date":"2026-05-08", "level":"common", "category":"inazumaEleven", "title":"イナズマイレブンGO ギャラクシー 放送開始（13周年）"}
+, {"date":"2026-05-08", "level":"common", "category":"normal", "title":"DF（ヴィクロ）"}
+, {"date":"2026-05-09", "level":"unique", "category":"birthday", "title":"南雲 晴矢"}
+, {"date":"2026-05-09", "level":"common", "category":"normal", "title":"GK（ヴィクロ）"}
+, {"date":"2026-05-10", "level":"unique", "category":"birthday", "title":"五条 勝"}
+, {"date":"2026-05-10", "level":"common", "category":"event", "title":"母の日"}
+, {"date":"2026-05-10", "level":"common", "category":"event", "title":"メイドの日"}
+, {"id":"c076", "date":"2026-05-11", "level":"limited", "category":"character", "title":"白のユニフォーム"}
+, {"date":"2026-05-11", "level":"common", "category":"normal", "title":"マネージャー（無印）"}
+, {"id":"c063", "date":"2026-05-12", "level":"limited", "category":"character", "title":"名前が「ろ」から始まるキャラ"}
+, {"date":"2026-05-12", "level":"common", "category":"normal", "title":"マネージャー（GO）"}
+, {"date":"2026-05-13", "level":"unique", "category":"birthday", "title":"手魚 激"}
+, {"date":"2026-05-13", "level":"common", "category":"normal", "title":"マネージャー（アレオリ）"}
+, {"id":"t036", "date":"2026-05-14", "level":"limited", "category":"team", "title":"チームＫ"}
+, {"date":"2026-05-14", "level":"common", "category":"normal", "title":"マネージャー（ヴィクロ）"}
+, {"id":"t031", "date":"2026-05-15", "level":"limited", "category":"team", "title":"ビッグウェイブス"}
+, {"date":"2026-05-15", "level":"common", "category":"normal", "title":"監督（無印）"}
+, {"id":"c033", "date":"2026-05-16", "level":"limited", "category":"character", "title":"名前が「す・ず」から始まるキャラ"}
+, {"date":"2026-05-16", "level":"common", "category":"normal", "title":"監督（GO）"}
+, {"date":"2026-05-17", "level":"unique", "category":"birthday", "title":"亜風炉 照美"}
+, {"date":"2026-05-17", "level":"common", "category":"normal", "title":"監督（アレオリ）"}
+, {"id":"t023", "date":"2026-05-18", "level":"limited", "category":"team", "title":"真・帝国学園"}
+, {"date":"2026-05-18", "level":"common", "category":"normal", "title":"監督（ヴィクロ）"}
+, {"id":"c029", "date":"2026-05-19", "level":"limited", "category":"character", "title":"名前が「け・げ」から始まるキャラ"}
+, {"date":"2026-05-19", "level":"common", "category":"normal", "title":"背の高いキャラクター"}
+, {"id":"c043", "date":"2026-05-20", "level":"limited", "category":"character", "title":"名前が「ぬ」から始まるキャラ"}
+, {"date":"2026-05-20", "level":"common", "category":"normal", "title":"背の低いキャラクター"}
+]
 }
