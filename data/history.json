@@ -264,5 +264,30 @@
 , {"date":"2026-05-19", "level":"common", "category":"normal", "title":"背の高いキャラクター"}
 , {"id":"c043", "date":"2026-05-20", "level":"limited", "category":"character", "title":"名前が「ぬ」から始まるキャラ"}
 , {"date":"2026-05-20", "level":"common", "category":"normal", "title":"背の低いキャラクター"}
+,
+{"id":"c075","date":"2026-05-21","level":"common","category":"character","title":"黒のユニフォーム"},
+{"date":"2026-05-21","level":"common","category":"normal","title":"OP「立ち上がリーヨ」"},
+{"date":"2026-05-22","level":"unique","category":"birthday","title":"倉掛 クララ"},
+{"date":"2026-05-22","level":"common","category":"normal","title":"青春おでん"},
+{"id":"t003","date":"2026-05-23","level":"limited","category":"team","title":"尾刈斗中"},
+{"date":"2026-05-23","level":"common","category":"normal","title":"OP「つながリーヨ」"},
+{"date":"2026-05-24","level":"unique","category":"birthday","title":"染岡 竜吾"},
+{"date":"2026-05-24","level":"unique","category":"birthday","title":"西垣 守"},
+{"date":"2026-05-24","level":"common","category":"normal","title":"ED「青春バスガイド」"},
+{"date":"2026-05-25","level":"unique","category":"birthday","title":"灰崎 凌兵"},
+{"date":"2026-05-25","level":"common","category":"normal","title":"OP「つながリーヨ」"},
+{"id":"t043","date":"2026-05-26","level":"limited","category":"team","title":"ローズグリフォン"},
+{"date":"2026-05-26","level":"common","category":"normal","title":"ED「流星ボーイ」"},
+{"id":"t025","date":"2026-05-27","level":"limited","category":"team","title":"陽花戸中"},
+{"date":"2026-05-27","level":"common","category":"normal","title":"OP「勝って泣こうゼッ!"},
+{"id":"t009","date":"2026-05-28","level":"limited","category":"team","title":"木戸川清修中"},
+{"date":"2026-05-28","level":"common","category":"normal","title":"ED「雄叫びボーイ WAO!」"},
+{"date":"2026-05-29","level":"common","category":"events","title":"呉服の日"},
+{"id":"c016","date":"2026-05-29","level":"common","category":"character","title":"灰色/銀色の髪"},
+{"date":"2026-05-29","level":"common","category":"normal","title":"OP「GOODキター!」"},
+{"date":"2026-05-30","level":"unique","category":"birthday","title":"豪炎寺 修也"},
+{"date":"2026-05-30","level":"common","category":"normal","title":"ED「本気ボンバー!!」"},
+{"id":"t046","date":"2026-05-31","level":"limited","category":"team","title":"ザ・グレイトホーン"},
+{"date":"2026-05-31","level":"common","category":"normal","title":"OP「僕らのゴォール!」"}
 ]
 }
