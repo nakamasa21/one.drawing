@@ -280,7 +280,9 @@ function tweetMonthBirthday() {
 }
 
 function tweetAnnounce() {
-  startTweet(document.getElementById("announceArea").innerText, "announceTweetBtn");
+  startTweet(
+    stripMetaForShare(document.getElementById("announceArea").innerText)
+    , "announceTweetBtn");
 }
 
 // =====================================================
