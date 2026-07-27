@@ -264,79 +264,179 @@
 , {"date":"2026-05-19", "level":"common", "category":"normal", "title":"背の高いキャラクター"}
 , {"id":"c043", "date":"2026-05-20", "level":"limited", "category":"character", "title":"名前が「ぬ」から始まるキャラ"}
 , {"date":"2026-05-20", "level":"common", "category":"normal", "title":"背の低いキャラクター"}
+
 ,
-{"id":"c075","date":"2026-05-21","level":"common","category":"character","title":"黒のユニフォーム"},
-{"date":"2026-05-21","level":"common","category":"normal","title":"OP「立ち上がリーヨ」"},
-{"date":"2026-05-22","level":"unique","category":"birthday","title":"倉掛 クララ"},
-{"date":"2026-05-22","level":"common","category":"normal","title":"青春おでん"},
-{"id":"t003","date":"2026-05-23","level":"limited","category":"team","title":"尾刈斗中"},
-{"date":"2026-05-23","level":"common","category":"normal","title":"OP「つながリーヨ」"},
-{"date":"2026-05-24","level":"unique","category":"birthday","title":"染岡 竜吾"},
-{"date":"2026-05-24","level":"unique","category":"birthday","title":"西垣 守"},
-{"date":"2026-05-24","level":"common","category":"normal","title":"ED「青春バスガイド」"},
-{"date":"2026-05-25","level":"unique","category":"birthday","title":"灰崎 凌兵"},
-{"date":"2026-05-25","level":"common","category":"normal","title":"OP「つながリーヨ」"},
-{"id":"t043","date":"2026-05-26","level":"limited","category":"team","title":"ローズグリフォン"},
-{"date":"2026-05-26","level":"common","category":"normal","title":"ED「流星ボーイ」"},
-{"id":"t025","date":"2026-05-27","level":"limited","category":"team","title":"陽花戸中"},
-{"date":"2026-05-27","level":"common","category":"normal","title":"OP「勝って泣こうゼッ!"},
-{"id":"t009","date":"2026-05-28","level":"limited","category":"team","title":"木戸川清修中"},
-{"date":"2026-05-28","level":"common","category":"normal","title":"ED「雄叫びボーイ WAO!」"},
-{"date":"2026-05-29","level":"common","category":"events","title":"呉服の日"},
-{"id":"c016","date":"2026-05-29","level":"common","category":"character","title":"灰色/銀色の髪"},
-{"date":"2026-05-29","level":"common","category":"normal","title":"OP「GOODキター!」"},
-{"date":"2026-05-30","level":"unique","category":"birthday","title":"豪炎寺 修也"},
-{"date":"2026-05-30","level":"common","category":"normal","title":"ED「本気ボンバー!!」"},
-{"id":"t046","date":"2026-05-31","level":"limited","category":"team","title":"ザ・グレイトホーン"},
-{"date":"2026-05-31","level":"common","category":"normal","title":"OP「僕らのゴォール!」"}
-,
-{"date":"2026-06-01","level":"unique","category":"birthday","title":"海腹 のりか"},
-{"date":"2026-06-01","level":"common","category":"normal","title":"ED「シャイニング パワー」"},
-{"date":"2026-06-02","level":"common","category":"normal","title":"甚平"},
-{"date":"2026-06-02","level":"common","category":"normal","title":"ED「またね…のキセツ」"},
-{"date":"2026-06-03","level":"unique","category":"birthday","title":"武方 勝"},
-{"date":"2026-06-03","level":"unique","category":"birthday","title":"武方 友"},
-{"date":"2026-06-03","level":"unique","category":"birthday","title":"武方 努"},
-{"date":"2026-06-03","level":"common","category":"normal","title":"ホバーボード"},
-{"date":"2026-06-04","level":"common","category":"normal","title":"ミキシマックス"},
-{"id":"c079","date":"2026-06-04","level":"common","category":"character","title":"褐色肌"},
-{"id":"c031","date":"2026-06-05","level":"common","category":"character","title":"名前が「さ・ざ」から始まるキャラ"},
-{"date":"2026-06-05","level":"common","category":"normal","title":"さくらんぼ"},
-{"date":"2026-06-06","level":"unique","category":"birthday","title":"熱波 夏彦"},
-{"date":"2026-06-06","level":"unique","category":"birthday","title":"サタン・ゴール"},
-{"date":"2026-06-06","level":"common","category":"events","title":"楽器の日"},
-{"date":"2026-06-07","level":"unique","category":"birthday","title":"氷上 烈斗"},
-{"date":"2026-06-07","level":"unique","category":"birthday","title":"女川 映日"},
-{"date":"2026-06-07","level":"common","category":"normal","title":"航海"},
-{"date":"2026-06-08","level":"unique","category":"birthday","title":"坂野上 昇"},
-{"date":"2026-06-08","level":"common","category":"normal","title":"梅雨"},
-{"id":"c021","date":"2026-06-09","level":"common","category":"character","title":"名前が「あ」から始まるキャラ"},
-{"date":"2026-06-09","level":"common","category":"normal","title":"イナズマイレブンクロス（サービス開始日）"},
-{"date":"2026-06-10","level":"common","category":"normal","title":"イナズマイレブンにマジで感謝の日"},
-{"id":"t005","date":"2026-06-10","level":"limited","category":"team","title":"御影専農中"},
-{"id":"c013","date":"2026-06-11","level":"common","category":"character","title":"黒色の髪"},
-{"date":"2026-06-11","level":"common","category":"normal","title":"騎士"},
-{"date":"2026-06-12","level":"unique","category":"birthday","title":"フロイ・ギリカナン"},
-{"date":"2026-06-12","level":"common","category":"normal","title":"紫陽花"},
-{"date":"2026-06-13","level":"unique","category":"birthday","title":"荒須 乱"},
-{"date":"2026-06-13","level":"common","category":"normal","title":"イナズマイレブン 超次元ドリームマッチ（12周年）"},
-{"date":"2026-06-14","level":"unique","category":"birthday","title":"双子玉川 哲也"},
-{"date":"2026-06-14","level":"common","category":"normal","title":"狐の嫁入り"},
-{"id":"c061","date":"2026-06-15","level":"common","category":"character","title":"名前が「る」から始まるキャラ"},
-{"date":"2026-06-15","level":"common","category":"normal","title":"学ラン/セーラー服"},
-{"date":"2026-06-16","level":"unique","category":"birthday","title":"道成 達巳"},
-{"date":"2026-06-16","level":"common","category":"normal","title":"傘"},
-{"id":"t024","date":"2026-06-17","level":"limited","category":"team","title":"大阪ギャルズ・ＣＣＣ"},
-{"date":"2026-06-17","level":"common","category":"normal","title":"ネイル"},
-{"id":"c034","date":"2026-06-19","level":"common","category":"character","title":"名前が「せ・ぜ」から始まるキャラ"},
-{"date":"2026-06-19","level":"common","category":"normal","title":"OP「天までとどけっ!」"},
-{"id":"c077","date":"2026-06-20","level":"common","category":"character","title":"黄色のユニフォーム"},
-{"date":"2026-06-20","level":"common","category":"normal","title":"ED「やっぱ青春」"},
-{"date":"2026-06-21","level":"common","category":"events","title":"父の日"},
-{"date":"2026-06-21","level":"common","category":"normal","title":"OP「成せば成るのさ 七色卵」"},
-{"id":"t033","date":"2026-06-22","level":"limited","category":"team","title":"ネオジャパン"},
-{"date":"2026-06-22","level":"common","category":"normal","title":"ED「かなり純情」"},
-{"id":"c051","date":"2026-06-23","level":"common","category":"character","title":"名前が「ま」から始まるキャラ"},
-{"date":"2026-06-23","level":"common","category":"normal","title":"OP「おはよう!シャイニング・デイ」"}
-]
-}
+    {"id":"c075","date":"2026-05-21","level":"limited","category":"character","title":"黒のユニフォーム"},
+    {"date":"2026-05-21","level":"common","category":"normal","title":"OP「立ち上がリーヨ」"},
+
+    {"date":"2026-05-22","level":"birthday","category":"birthday","title":"倉掛 クララ"},
+    {"date":"2026-05-22","level":"common","category":"normal","title":"青春おでん"},
+
+    {"id":"t003","date":"2026-05-23","level":"common","category":"team","title":"尾刈斗中"},
+    {"date":"2026-05-23","level":"common","category":"normal","title":"OP「つながリーヨ」"},
+
+    {"date":"2026-05-24","level":"birthday","category":"birthday","title":"染岡 竜吾"},
+    {"date":"2026-05-24","level":"birthday","category":"birthday","title":"西垣 守"},
+    {"date":"2026-05-24","level":"common","category":"normal","title":"ED「青春バスガイド」"},
+
+    {"date":"2026-05-25","level":"birthday","category":"birthday","title":"灰崎 凌兵"},
+    {"date":"2026-05-25","level":"common","category":"normal","title":"OP「つながリーヨ」"},
+
+    {"id":"t043","date":"2026-05-26","level":"common","category":"team","title":"ローズグリフォン"},
+    {"date":"2026-05-26","level":"common","category":"normal","title":"ED「流星ボーイ」"},
+
+    {"id":"t025","date":"2026-05-27","level":"common","category":"team","title":"陽花戸中"},
+    {"date":"2026-05-27","level":"common","category":"normal","title":"OP「勝って泣こうゼッ!"},
+
+    {"id":"t009","date":"2026-05-28","level":"common","category":"team","title":"木戸川清修中"},
+    {"date":"2026-05-28","level":"common","category":"normal","title":"ED「雄叫びボーイ WAO!」"},
+
+    {"date":"2026-05-29","level":"events","category":"events","title":"呉服の日"},
+    {"id":"c016","date":"2026-05-29","level":"limited","category":"character","title":"灰色/銀色の髪"},
+    {"date":"2026-05-29","level":"common","category":"normal","title":"OP「GOODキター!」"},
+
+    {"date":"2026-05-30","level":"birthday","category":"birthday","title":"豪炎寺 修也"},
+    {"date":"2026-05-30","level":"common","category":"normal","title":"ED「本気ボンバー!!」"},
+
+    {"id":"t046","date":"2026-05-31","level":"common","category":"team","title":"ザ・グレイトホーン"},
+    {"date":"2026-05-31","level":"common","category":"normal","title":"OP「僕らのゴォール!」"},
+
+    {"date":"2026-06-01","level":"birthday","category":"birthday","title":"海腹 のりか"},
+    {"date":"2026-06-01","level":"common","category":"normal","title":"ED「シャイニング パワー」"},
+
+    {"id":"s025","date":"2026-06-02","level":"common","category":"seasonal","title":"甚平"},
+    {"date":"2026-06-02","level":"common","category":"normal","title":"ED「またね…のキセツ」"},
+
+    {"date":"2026-06-03","level":"birthday","category":"birthday","title":"武方 勝・友・努"},
+    {"date":"2026-06-03","level":"common","category":"normal","title":"ホバーボード"},
+
+    {"id":"n045","date":"2026-06-04","level":"uncommon","category":"normal","title":"ミキシマックス"},
+    {"id":"c079","date":"2026-06-04","level":"uncommon","category":"character","title":"褐色肌"},
+
+    {"id":"c031","date":"2026-06-05","level":"limited","category":"character","title":"名前が「さ・ざ」から始まるキャラ"},
+    {"id":"s015","date":"2026-06-05","level":"common","category":"seasonal","title":"さくらんぼ"},
+
+    {"date":"2026-06-06","level":"birthday","category":"birthday","title":"熱波 夏彦"},
+    {"date":"2026-06-06","level":"birthday","category":"birthday","title":"サタン・ゴール"},
+    {"date":"2026-06-06","level":"events","category":"events","title":"楽器の日"},
+
+    {"date":"2026-06-07","level":"birthday","category":"birthday","title":"氷上 烈斗"},
+    {"date":"2026-06-07","level":"birthday","category":"birthday","title":"女川 映日"},
+    {"id":"n048","date":"2026-06-07","level":"uncommon","category":"normal","title":"航海"},
+
+    {"date":"2026-06-08","level":"birthday","category":"birthday","title":"坂野上 昇"},
+    {"date":"2026-06-08","level":"common","category":"normal","title":"梅雨"},
+
+    {"id":"c021","date":"2026-06-09","level":"limited","category":"character","title":"名前が「あ」から始まるキャラ"},
+    {"date":"2026-06-09","level":"events","category":"events","title":"イナズマイレブンクロス（サービス開始日）"},
+
+    {"date":"2026-06-10","level":"events","category":"events","title":"イナズマイレブンにマジで感謝の日"},
+    {"id":"t005","date":"2026-06-10","level":"common","category":"team","title":"御影専農中"} ,
+    {"id":"c013","date":"2026-06-11","level":"limited","category":"character","title":"黒色の髪"},
+    {"date":"2026-06-11","level":"common","category":"normal","title":"騎士"},
+
+    {"date":"2026-06-12","level":"birthday","category":"birthday","title":"フロイ・ギリカナン"},
+    {"date":"2026-06-12","level":"common","category":"normal","title":"紫陽花"},
+
+    {"date":"2026-06-13","level":"birthday","category":"birthday","title":"荒須 乱"},
+    {"date":"2026-06-13","level":"events","category":"events","title":"イナズマイレブン 超次元ドリームマッチ（12周年）"},
+
+    {"date":"2026-06-14","level":"birthday","category":"birthday","title":"双子玉川 哲也"},
+    {"date":"2026-06-14","level":"common","category":"normal","title":"狐の嫁入り"},
+
+    {"id":"c061","date":"2026-06-15","level":"limited","category":"character","title":"名前が「る」から始まるキャラ"},
+    {"date":"2026-06-15","level":"common","category":"normal","title":"学ラン/セーラー服"},
+
+    {"date":"2026-06-16","level":"birthday","category":"birthday","title":"道成 達巳"},
+    {"date":"2026-06-16","level":"common","category":"normal","title":"傘"},
+
+    {"id":"t024","date":"2026-06-17","level":"common","category":"team","title":"大阪ギャルズ・ＣＣＣ"},
+    {"date":"2026-06-17","level":"common","category":"normal","title":"ネイル"},
+
+    {"id":"c034","date":"2026-06-19","level":"limited","category":"character","title":"名前が「せ・ぜ」から始まるキャラ"},
+    {"date":"2026-06-19","level":"common","category":"normal","title":"OP「天までとどけっ!」"},
+
+    {"id":"c077","date":"2026-06-20","level":"limited","category":"character","title":"黄色のユニフォーム"},
+    {"date":"2026-06-20","level":"common","category":"normal","title":"ED「やっぱ青春」"},
+
+    {"date":"2026-06-21","level":"events","category":"events","title":"父の日"},
+    {"date":"2026-06-21","level":"common","category":"normal","title":"OP「成せば成るのさ 七色卵」"},
+
+    {"id":"t033","date":"2026-06-22","level":"common","category":"team","title":"ネオジャパン"},
+    {"date":"2026-06-22","level":"common","category":"normal","title":"ED「かなり純情」"},
+
+    {"id":"c051","date":"2026-06-23","level":"limited","category":"character","title":"名前が「ま」から始まるキャラ"},
+    {"date":"2026-06-23","level":"common","category":"normal","title":"OP「おはよう!シャイニング・デイ」"},
+
+    {"id":"c055","date":"2026-06-24","level":"limited","category":"character","title":"名前が「も」から始まるキャラ"},
+    {"date":"2026-06-24","level":"common","category":"normal","title":"ED「HAJIKE-YO!!」"},
+
+    {"id":"c050","date":"2026-06-25","level":"limited","category":"character","title":"名前が「ほ・ぼ・ぽ」から始まるキャラ"},
+    {"date":"2026-06-25","level":"common","category":"normal","title":"OP「打ち砕ーくっ!」"},
+
+    {"date":"2026-06-26","level":"birthday","category":"birthday","title":"出右手 豊"},
+    {"date":"2026-06-26","level":"common","category":"normal","title":"OP「情熱で胸アツ!」"},
+
+    {"date":"2026-06-27","level":"common","category":"normal","title":"OP「感動共有!」"},
+    {"id":"c058","date":"2026-06-27","level":"limited","category":"character","title":"名前が「よ」から始まるキャラ"},
+
+    {"date":"2026-06-28","level":"common","category":"normal","title":"ED「夏がやってくる」"},
+    {"id":"c019","date":"2026-06-28","level":"limited","category":"character","title":"紫色の髪"},
+
+    {"id":"c056","date":"2026-06-29","level":"limited","category":"character","title":"名前が「や」から始まるキャラ"},
+    {"date":"2026-06-29","level":"common","category":"normal","title":"OP「初心をKEEP ON!」"},
+
+    {"date":"2026-06-30","level":"events","category":"events","title":"イナズマイレブン エブリデイ!!+ 発売（9周年）"},
+    {"date":"2026-06-30","level":"events","category":"events","title":"ジューンブライド"},
+    {"date":"2026-06-30","level":"common","category":"normal","title":"ED「手をつなごう」"},
+
+    {"id":"c073","date":"2026-07-05","level":"limited","category":"character","title":"緑のユニフォーム"},
+    {"date":"2026-07-05","level":"common","category":"normal","title":"ED「勝手にシンデレラ」"},
+
+    {"id":"c004","date":"2026-07-06","level":"limited","category":"character","title":"青色の瞳"},
+    {"date":"2026-07-06","level":"common","category":"normal","title":"OP「地球を回せっ!」"},
+
+    {"date":"2026-07-07","level":"birthday","category":"birthday","title":"古都野 富夫"},
+    {"date":"2026-07-07","level":"events","category":"events","title":"七夕"},
+    {"date":"2026-07-07","level":"common","category":"normal","title":"ED「ファッション☆宇宙戦士」"},
+
+    {"id":"c027","date":"2026-07-08","level":"limited","category":"character","title":"名前が「き・ぎ」から始まるキャラ"},
+    {"date":"2026-07-08","level":"common","category":"normal","title":"OP「スパノバ!」"},
+
+    {"date":"2026-07-09","level":"common","category":"normal","title":"ED「嵐・竜巻・ハリケーン」"},
+    {"id":"c010","date":"2026-07-09","level":"limited","category":"character","title":"灰色/銀色の瞳"},
+
+    {"date":"2026-07-15","level":"common","category":"normal","title":"OP「地球をキック!」"},
+    {"id":"c035","date":"2026-07-15","level":"limited","category":"character","title":"名前が「そ・ぞ」から始まるキャラ"},
+
+    {"date":"2026-07-16","level":"birthday","category":"birthday","title":"八神 玲名"},
+    {"date":"2026-07-16","level":"events","category":"events","title":"イナズマイレブン ストライカーズ 発売（15周年）"},
+    {"date":"2026-07-16","level":"common","category":"normal","title":"ED「サマーゾンビ」"},
+
+    {"date":"2026-07-17","level":"common","category":"normal","title":"ED「明日へのBye Bye」"},
+    {"id":"c042","date":"2026-07-17","level":"limited","category":"character","title":"名前が「に」から始まるキャラ"},
+
+    {"date":"2026-07-18","level":"birthday","category":"birthday","title":"葉音 一矢"},
+    {"date":"2026-07-18","level":"common","category":"normal","title":"「笑顔がゴール！」"},
+
+    {"id":"s026","date":"2026-07-19","level":"common","category":"seasonal","title":"浴衣"},
+    {"date":"2026-07-19","level":"common","category":"normal","title":"「ガンガンガガン！」"},
+
+    {"date":"2026-07-21","level":"common","category":"normal","title":"「世界に刻め！イナズママーク」"},
+    {"id":"w004","date":"2026-07-21","level":"uncommon","category":"wear","title":"純情ウェア"},
+
+    {"date":"2026-07-22","level":"common","category":"normal","title":"「炸裂俺らの青い春」"},
+    {"id":"s016","date":"2026-07-22","level":"common","category":"seasonal","title":"すいか"},
+
+    {"date":"2026-07-23","level":"common","category":"normal","title":"「ザ・ヴィクトリーヨ！」"},
+    {"date":"2026-07-23","level":"common","category":"normal","title":"バカンス"},
+
+    {"id":"t042","date":"2026-07-24","level":"common","category":"team","title":"リトルギガント"},
+    {"date":"2026-07-24","level":"common","category":"normal","title":"「勇者の魂」"},
+
+    {"date":"2026-07-25","level":"common","category":"normal","title":"「大・団・円」"},
+    {"date":"2026-07-25","level":"common","category":"normal","title":"スカウトキャラクター"},
+
+    {"date":"2026-07-26","level":"common","category":"normal","title":"ED「道標」"},
+    {"id":"t006","date":"2026-07-26","level":"common","category":"team","title":"秋葉名戸学園"}
+  ]}
