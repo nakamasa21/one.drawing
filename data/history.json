@@ -464,4 +464,80 @@
 ,{"id":"","date":"2026-08-08","level":"common","category":"normal","title":"弘山 誘（誕生日）"}
 ,{"id":"","date":"2026-08-08","level":"common","category":"normal","title":"風属性のシュート技"}
 ,{"id":"","date":"2026-08-08","level":"common","category":"normal","title":"背番号8のキャラクター"}
-  ]}
+,{"date":"2026-08-09","level":"unique","category":"birthday","title":"下町 駆"}
+,{"date":"2026-08-09","level":"common","category":"normal","title":"林属性のシュート技"}
+,{"date":"2026-08-09","level":"common","category":"normal","title":"ハグの日"}
+,{"date":"2026-08-10","level":"common","category":"events","title":"ハートの日"}
+,{"date":"2026-08-10","level":"common","category":"normal","title":"鳩の日"}
+,{"date":"2026-08-10","level":"common","category":"normal","title":"火属性のシュート技"}
+,{"date":"2026-08-12","level":"unique","category":"birthday","title":"洞面 秀一郎"}
+,{"date":"2026-08-12","level":"unique","category":"birthday","title":"薔薇園 華"}
+,{"date":"2026-08-12","level":"common","category":"normal","title":"山属性のシュート技"}
+,{"date":"2026-08-13","level":"common","category":"normal","title":"朝顔"}
+,{"date":"2026-08-13","level":"common","category":"normal","title":"風属性のドリブル技"}
+,{"date":"2026-08-14","level":"unique","category":"birthday","title":"阿保露 光"}
+,{"date":"2026-08-14","level":"common","category":"normal","title":"林属性のドリブル技"}
+,{"date":"2026-08-15","level":"common","category":"normal","title":"マスカット"}
+,{"date":"2026-08-15","level":"common","category":"normal","title":"火属性のドリブル技"}
+,{"date":"2026-08-16","level":"common","category":"normal","title":"山属性のドリブル技"}
+,{"date":"2026-08-16","level":"common","category":"normal","title":"ハンバーガー"}
+,{"date":"2026-08-17","level":"common","category":"normal","title":"風属性のブロック技"}
+,{"date":"2026-08-17","level":"common","category":"normal","title":"電車"}
+,{"date":"2026-08-18","level":"unique","category":"birthday","title":"白鳥 つむき"}
+,{"date":"2026-08-18","level":"common","category":"normal","title":"林属性のブロック技"}
+,{"date":"2026-08-19","level":"unique","category":"birthday","title":"本場 激"}
+,{"date":"2026-08-19","level":"common","category":"events","title":"バイクの日"}
+,{"date":"2026-08-19","level":"common","category":"normal","title":"火属性のブロック技"}
+,{"id":"t028","date":"2026-08-20","level":"common","category":"team","title":"樹海チーム"}
+,{"date":"2026-08-20","level":"common","category":"normal","title":"山属性のブロック技"}
+,{"date":"2026-08-21","level":"unique","category":"birthday","title":"土門 飛鳥"}
+,{"date":"2026-08-21","level":"common","category":"normal","title":"風属性のキーパー技"}
+,{"date":"2026-08-21","level":"common","category":"events","title":"バニーの日"}
+,{"date":"2026-08-22","level":"unique","category":"birthday","title":"円堂 守"}
+,{"date":"2026-08-22","level":"common","category":"events","title":"イナズマイレブン（無印）発売（18周年）"}
+,{"date":"2026-08-22","level":"common","category":"normal","title":"林属性のキーパー技"}
+,{"id":"s018","date":"2026-08-23","level":"common","category":"seasonal","title":"桃"}
+,{"date":"2026-08-23","level":"common","category":"normal","title":"火属性のキャッチ技"}
+,{"date":"2026-08-24","level":"common","category":"normal","title":"ドーナツ"}
+,{"date":"2026-08-24","level":"common","category":"normal","title":"山属性のキャッチ技"}
+,{"date":"2026-08-26","level":"common","category":"normal","title":"雨宿り"}
+,{"date":"2026-08-26","level":"common","category":"normal","title":"放課後の屋上"}
+,{"id":"t011","date":"2026-08-27","level":"common","category":"team","title":"稲妻ＫＦＣ"}
+,{"date":"2026-08-27","level":"common","category":"normal","title":"かき氷"}
+,{"date":"2026-08-28","level":"common","category":"normal","title":"帽子を被ったキャラクター"}
+,{"date":"2026-08-28","level":"common","category":"normal","title":"大漁"}
+,{"id":"t017","date":"2026-08-29","level":"common","category":"team","title":"プロミネンス"}
+,{"date":"2026-08-29","level":"common","category":"normal","title":"海水浴"}
+,{"date":"2026-08-30","level":"unique","category":"birthday","title":"アンドレアス・ベボ"}
+,{"date":"2026-08-30","level":"common","category":"normal","title":"麦わら帽子"}
+,{"date":"2026-08-31","level":"common","category":"normal","title":"ラムネ瓶"}
+,{"date":"2026-08-31","level":"common","category":"normal","title":"夏休み最終日"}
+,{"date":"2026-09-01","level":"unique","category":"birthday","title":"久遠 道也"}
+,{"date":"2026-09-01","level":"common","category":"normal","title":"夏の終わり"}
+,{"date":"2026-09-02","level":"unique","category":"birthday","title":"大部 信"}
+,{"date":"2026-09-02","level":"common","category":"normal","title":"みつあみ"}
+,{"date":"2026-09-03","level":"unique","category":"birthday","title":"武六 積夫"}
+,{"date":"2026-09-03","level":"common","category":"normal","title":"グミの日"}
+,{"date":"2026-09-04","level":"unique","category":"birthday","title":"瀬方 隆一郎"}
+,{"date":"2026-09-04","level":"common","category":"normal","title":"スーツ"}
+,{"date":"2026-09-05","level":"unique","category":"birthday","title":"早乙女 聖也"}
+,{"date":"2026-09-05","level":"common","category":"normal","title":"ワンピース"}
+,{"date":"2026-09-06","level":"common","category":"events","title":"黒の日"}
+,{"date":"2026-09-06","level":"common","category":"normal","title":"風属性の化身"}
+,{"date":"2026-09-07","level":"unique","category":"birthday","title":"岩垣 登郎"}
+,{"date":"2026-09-07","level":"common","category":"normal","title":"林属性の化身"}
+,{"date":"2026-09-08","level":"unique","category":"birthday","title":"宇郷 猿吉"}
+,{"date":"2026-09-08","level":"common","category":"normal","title":"火属性の化身"}
+,{"date":"2026-09-09","level":"common","category":"normal","title":"着ぐるみ"}
+,{"date":"2026-09-09","level":"common","category":"normal","title":"山属性の化身"}
+,{"date":"2026-09-10","level":"unique","category":"birthday","title":"砂木沼 治"}
+,{"date":"2026-09-10","level":"common","category":"normal","title":"ポニーテール"}
+,{"date":"2026-09-11","level":"unique","category":"birthday","title":"クラリオ・オーヴァン"}
+,{"date":"2026-09-11","level":"common","category":"normal","title":"化身アームド（風属性）"}
+,{"date":"2026-09-12","level":"common","category":"normal","title":"化身アームド（林属性）"}
+,{"date":"2026-09-12","level":"common","category":"normal","title":"自転車"}
+,{"date":"2026-09-13","level":"unique","category":"birthday","title":"水戸 安登未"}
+,{"date":"2026-09-13","level":"common","category":"normal","title":"化身アームド（火属性）"}
+,{"date":"2026-09-14","level":"unique","category":"birthday","title":"光宗 団"}
+,{"date":"2026-09-14","level":"common","category":"normal","title":"化身アームド（山属性）"}
+    ]}
