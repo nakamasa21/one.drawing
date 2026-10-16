@@ -540,4 +540,76 @@
 ,{"date":"2026-09-13","level":"common","category":"normal","title":"化身アームド（火属性）"}
 ,{"date":"2026-09-14","level":"unique","category":"birthday","title":"光宗 団"}
 ,{"date":"2026-09-14","level":"common","category":"normal","title":"化身アームド（山属性）"}
-    ]}
+,{"id":"s021","date":"2026-09-15","level":"uncommon","category":"seasonal","title":"栗"}
+,{"id":"w003","date":"2026-09-15","level":"uncommon","category":"wear","title":"ザンウェア"}
+,{"date":"2026-09-16","level":"unique","category":"birthday","title":"基山 タツヤ"}
+,{"date":"2026-09-16","level":"common","category":"normal","title":"基山 ヒロト"}
+,{"date":"2026-09-16","level":"common","category":"normal","title":"流星"}
+,{"date":"2026-09-17","level":"unique","category":"birthday","title":"狸ヶ原 ぽん子"}
+,{"id":"s003","date":"2026-09-17","level":"common","category":"seasonal","title":"秋"}
+,{"date":"2026-09-18","level":"unique","category":"birthday","title":"黒部 立樹"}
+,{"date":"2026-09-18","level":"common","category":"normal","title":"紅葉"}
+,{"date":"2026-09-19","level":"common","category":"normal","title":"秋の味覚"}
+,{"date":"2026-09-19","level":"common","category":"normal","title":"ファンタジー衣装"}
+,{"date":"2026-09-19","level":"common","category":"normal","title":"フットボールフロンティア編の名シーン"}
+,{"date":"2026-09-20","level":"common","category":"normal","title":"おそろい"}
+,{"date":"2026-09-20","level":"common","category":"normal","title":"脅威の侵略者編の名シーン"}
+,{"date":"2026-09-21","level":"common","category":"events","title":"敬老の日"}
+,{"date":"2026-09-21","level":"common","category":"normal","title":"世界への挑戦‼︎編の名シーン"}
+,{"date":"2026-09-22","level":"common","category":"normal","title":"イナズマイレブンGOの名シーン"}
+,{"date":"2026-09-22","level":"common","category":"normal","title":"旅行"}
+,{"date":"2026-09-23","level":"unique","category":"birthday","title":"日和 正勝"}
+,{"date":"2026-09-23","level":"common","category":"events","title":"秋分の日"}
+,{"date":"2026-09-23","level":"common","category":"normal","title":"クロノストーンの名シーン"}
+,{"date":"2026-09-24","level":"unique","category":"birthday","title":"剛陣 鉄之助"}
+,{"date":"2026-09-24","level":"common","category":"normal","title":"ギャラクシーの名シーン"}
+,{"date":"2026-09-25","level":"unique","category":"birthday","title":"奥野 細道"}
+,{"date":"2026-09-25","level":"common","category":"normal","title":"アレスの天秤の名シーン"}
+,{"date":"2026-09-25","level":"common","category":"normal","title":"お月見"}
+,{"date":"2026-09-26","level":"unique","category":"birthday","title":"緑川 リュウジ"}
+,{"date":"2026-09-26","level":"common","category":"normal","title":"オリオンの刻印の名シーン"}
+,{"date":"2026-09-28","level":"common","category":"normal","title":"雷門ファーストチーム"}
+,{"date":"2026-09-28","level":"common","category":"normal","title":"イチョウ"}
+,{"date":"2026-09-29","level":"common","category":"normal","title":"サーカス"}
+,{"id":"c053","date":"2026-09-29","level":"limited","category":"character","title":"名前が「む」から始まるキャラ"}
+,{"date":"2026-09-30","level":"unique","category":"birthday","title":"経流背 有珠"}
+,{"date":"2026-09-30","level":"common","category":"normal","title":"待ち合わせ"}
+,{"date":"2026-10-01","level":"unique","category":"birthday","title":"室伏 恐"}
+,{"date":"2026-10-01","level":"common","category":"normal","title":"メガネの日"}
+,{"date":"2026-10-01","level":"common","category":"events","title":"イナズマイレブン2 ファイア／ブリザード 発売（17周年）"}
+,{"date":"2026-10-02","level":"unique","category":"birthday","title":"立向居 勇気"}
+,{"date":"2026-10-02","level":"common","category":"normal","title":"特訓"}
+,{"id":"c039","date":"2026-10-03","level":"limited","category":"character","title":"名前が「て・で」から始まるキャラ"}
+,{"date":"2026-10-03","level":"common","category":"normal","title":"大阪ギャルズウェア"}
+,{"date":"2026-10-04","level":"common","category":"normal","title":"メタル研究会"}
+,{"date":"2026-10-04","level":"common","category":"normal","title":"振り向く"}
+,{"date":"2026-10-05","level":"common","category":"events","title":"イナズマイレブン フットボールフロンティア編 放送開始（18周年）"}
+,{"date":"2026-10-05","level":"common","category":"events","title":"イナズマイレブン オリオンの刻印 放送開始（8周年）"}
+,{"date":"2026-10-05","level":"common","category":"normal","title":"内緒話"}
+,{"date":"2026-10-06","level":"common","category":"normal","title":"囲碁・将棋部"}
+,{"date":"2026-10-06","level":"common","category":"normal","title":"背中合わせ"}
+,{"date":"2026-10-07","level":"unique","category":"birthday","title":"田植 郁人"}
+,{"date":"2026-10-07","level":"common","category":"normal","title":"ネイビー・インベーダー"}
+,{"date":"2026-10-07","level":"common","category":"normal","title":"寄り道"}
+,{"date":"2026-10-08","level":"common","category":"normal","title":"木の日"}
+,{"date":"2026-10-08","level":"common","category":"normal","title":"照れ笑い"}
+,{"date":"2026-10-09","level":"unique","category":"birthday","title":"歩星 呑二"}
+,{"date":"2026-10-09","level":"common","category":"normal","title":"ノーザンファング"}
+,{"date":"2026-10-09","level":"common","category":"normal","title":"ガッツポーズ"}
+,{"date":"2026-10-10","level":"unique","category":"birthday","title":"盛上 モコ"}
+,{"date":"2026-10-10","level":"common","category":"normal","title":"ヴァンプティム"}
+,{"date":"2026-10-10","level":"common","category":"normal","title":"エースストライカー"}
+,{"date":"2026-10-11","level":"common","category":"normal","title":"王帝月ノ宮中"}
+,{"date":"2026-10-11","level":"common","category":"normal","title":"絆創膏"}
+,{"date":"2026-10-12","level":"unique","category":"birthday","title":"金城 光成"}
+,{"date":"2026-10-12","level":"common","category":"normal","title":"アクア・ハーミット"}
+,{"date":"2026-10-12","level":"common","category":"normal","title":"あくび"}
+,{"date":"2026-10-13","level":"unique","category":"birthday","title":"天野 政道"}
+,{"date":"2026-10-13","level":"common","category":"normal","title":"ラトニークイレブン"}
+,{"date":"2026-10-14","level":"common","category":"normal","title":"ドラゴンリンク"}
+,{"date":"2026-10-14","level":"common","category":"normal","title":"お見舞い"}
+,{"date":"2026-10-15","level":"common","category":"normal","title":"ギル"}
+,{"date":"2026-10-15","level":"common","category":"normal","title":"カーディガン"}
+,{"date":"2026-10-16","level":"common","category":"normal","title":"日本舞踊部"}
+,{"date":"2026-10-16","level":"common","category":"normal","title":"手紙"}
+        ]}
